@@ -17,7 +17,7 @@
       line-height: 1.6;
     }
     header {
-      background: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон для заголовка */
+      background: rgba(0, 0, 0, 0.6);
       padding: 60px 20px;
       text-align: center;
       position: relative;
@@ -27,22 +27,6 @@
       height: auto;
       display: block;
       margin: 0 auto 20px;
-      z-index: 1;
-      position: relative;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      position: relative;
-      z-index: 1;
-      color: #ffffff;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      position: relative;
-      z-index: 1;
-      color: #ffffff;
     }
     .container {
       padding: 40px 20px;
@@ -68,10 +52,48 @@
       background: #ff7f50;
       margin: 10px auto 0;
     }
-    .section p {
-      font-size: 1rem;
-      margin: 0 auto;
+    .card {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
       max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .roadmap {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .roadmap-item {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      position: relative;
+      padding-left: 40px;
+    }
+    .roadmap-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background: #ff7f50;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.3);
+    }
+    .roadmap-item span {
+      font-weight: 600;
+      color: #4ade80;
+      margin-right: 15px;
+    }
+    .roadmap-item p {
+      margin: 0;
       color: #ffffff;
     }
     .cta-button {
@@ -83,8 +105,7 @@
       background: linear-gradient(135deg, #ff7f50, #ff6347);
       border-radius: 50px;
       text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
     }
     .cta-button:hover {
       transform: translateY(-5px);
@@ -255,6 +276,34 @@
            4. Laugh your way to the top of the leaderboard!</p>
       </div>
     </div>
+      <div class="section">
+    <h2 id="roadmap-title">Roadmap</h2>
+    <div class="roadmap card">
+      <div class="roadmap-item">
+        <span>Q1 2025</span>
+        <p>Launch W3B token on MMM platform</p>
+      </div>
+      <div class="roadmap-item">
+        <span>Q2 2025</span>
+        <p>Listing on decentralized exchanges (DEX)</p>
+      </div>
+      <div class="roadmap-item">
+        <span>Q3 2025</span>
+        <p>Listing on CoinGecko, CoinMarketCap</p>
+      </div>
+      <div class="roadmap-item">
+        <span>Q4 2025</span>
+        <p>Global marketing campaign</p>
+      </div>
+      <div class="roadmap-item">
+        <span>Q1 2026</span>
+        <p>Migration to multiple blockchains</p>
+      </div>
+      <div class="roadmap-item">
+        <span>Q2 2026</span>
+        <p>Development of Web3 Bank ecosystem projects</p>
+      </div>
+    </div>
   </div>
   <footer>
     <p>&copy; 2025 Web3 Bank. All rights reserved. | 
@@ -285,6 +334,15 @@
         "tokenomics-text": "Our tokenomics are designed to ensure fairness, sustainability, and long-term growth for our community. Join us and become part of the decentralized future!",
         "how-title": "How It Works",
         "how-text": "1. Create your Web3 wallet.<br>2. Mint or trade meme tokens.<br>3. Vote on the best memes to govern the platform.<br>4. Laugh your way to the top of the leaderboard!"
+        "roadmap-title": "Roadmap",
+        "roadmap-items": [
+          "Launch W3B token on MMM platform",
+          "Listing on decentralized exchanges (DEX)",
+          "Listing on CoinGecko, CoinMarketCap",
+          "Global marketing campaign",
+          "Migration to multiple blockchains",
+          "Development of Web3 Bank ecosystem projects"
+        ]
       },
       ru: {
         "header-title": "Web3 Банк",
@@ -302,6 +360,15 @@
         "tokenomics-text": "Наша токеномика разработана для обеспечения справедливости, устойчивости и долгосрочного роста для нашего сообщества. Присоединяйтесь к нам и станьте частью децентрализованного будущего!",
         "how-title": "Как это работает",
         "how-text": "1. Создайте свой Web3 кошелек.<br>2. Чеканите или торгуйте мем-токенами.<br>3. Голосуйте за лучшие мемы для управления платформой.<br>4. Смейтесь до вершины лидерборда!"
+        "roadmap-title": "Дорожная карта",
+        "roadmap-items": [
+          "Запуск токена W3B на платформе MMM",
+          "Листинг на децентрализованных биржах (DEX)",
+          "Листинг на CoinGecko, CoinMarketCap",
+          "Глобальная маркетинговая кампания",
+          "Миграция на несколько блокчейнов",
+          "Разработка экосистемных проектов Web3 Bank"
+        ]
       }
     };
 
@@ -327,6 +394,11 @@
       document.getElementById("tokenomics-text").innerText = translations[currentLanguage]["tokenomics-text"];
       document.getElementById("how-title").innerText = translations[currentLanguage]["how-title"];
       document.getElementById("how-text").innerHTML = translations[currentLanguage]["how-text"];
+      const roadmapItems = document.querySelectorAll('.roadmap-item p');
+      roadmapItems.forEach((item, index) => {
+        item.textContent = translations[currentLanguage]["roadmap-items"][index];
+      });
+      document.getElementById("roadmap-title").innerText = translations[currentLanguage]["roadmap-title"];
     }
   </script>
 </body>
