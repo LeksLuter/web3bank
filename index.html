@@ -6,227 +6,7 @@
   <title>Web3 Bank - Your Decentralized Crypto-Mem Adventure</title>
   <link rel="icon" href="https://i.imgur.com/MPGaJtZ.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Общие стили */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: url('https://i.imgur.com/12sZ8xe.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-    }
-    .logo {
-      width: 150px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px;
-    }
-    .container {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .section {
-      margin-bottom: 60px;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #ff7f50;
-      position: relative;
-      display: inline-block;
-    }
-    .section h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #ff7f50;
-      margin: 10px auto 0;
-    }
-    .card {
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(10px);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 600px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
-    .roadmap {
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    .roadmap-item {
-      display: flex;
-      align-items: center;
-      margin: 20px 0;
-      position: relative;
-      padding-left: 40px;
-    }
-    .roadmap-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
-      background: #ff7f50;
-      border-radius: 50%;
-      box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.3);
-    }
-    .roadmap-item span {
-      font-weight: 600;
-      color: #4ade80;
-      margin-right: 15px;
-    }
-    .roadmap-item p {
-      margin: 0;
-      color: #ffffff;
-    }
-    .cta-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 30px;
-      font-size: 1rem;
-      color: #ffffff;
-      background: linear-gradient(135deg, #ff7f50, #ff6347);
-      border-radius: 50px;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-    .cta-button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-    .card {
-      background: rgba(0, 0, 0, 0.7); /* Темный полупрозрачный фон для карточек */
-      backdrop-filter: blur(10px);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 600px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-    footer {
-      background: rgba(0, 0, 0, 0.8); /* Темный полупрозрачный фон для футера */
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #ffffff;
-    }
-    footer a {
-      color: #4ade80;
-      text-decoration: none;
-      margin: 0 10px;
-      transition: color 0.3s ease;
-    }
-    footer a:hover {
-      color: #ff7f50;
-    }
-    .social-icons {
-      margin-top: 20px;
-    }
-    .social-icons a {
-      font-size: 1.5rem;
-      margin: 0 10px;
-      color: #ffffff;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-    .social-icons a:hover {
-      transform: scale(1.2);
-      color: #ff7f50;
-    }
-
-    /* Кнопка переключения языков */
-    .language-switcher {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-    }
-    .flag-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      border: 2px solid #ffffff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
-    .flag-icon:hover {
-      transform: scale(1.1);
-    }
-
-    /* Адаптивность */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      .section h2 {
-        font-size: 2rem;
-      }
-      .cta-button {
-        padding: 12px 20px;
-        font-size: 0.9rem;
-      }
-      .card {
-        padding: 15px;
-      }
-      footer {
-        font-size: 0.8rem;
-      }
-      .social-icons a {
-        font-size: 1.2rem;
-      }
-    }
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      header p {
-        font-size: 0.9rem;
-      }
-      .section h2 {
-        font-size: 1.5rem;
-      }
-      .section p {
-        font-size: 0.9rem;
-      }
-      .cta-button {
-        padding: 10px 15px;
-        font-size: 0.8rem;
-      }
-      .card {
-        padding: 10px;
-      }
-      footer {
-        font-size: 0.7rem;
-      }
-      .social-icons a {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -268,40 +48,41 @@
       </div>
     </div>
     <div class="section">
+      <h2 id="roadmap-title">Roadmap</h2>
+      <div class="roadmap card">
+        <div class="roadmap-item">
+          <span>Q1 2025</span>
+          <p>Launch W3B token on MMM platform</p>
+        </div>
+        <div class="roadmap-item">
+          <span>Q2 2025</span>
+          <p>Listing on decentralized exchanges (DEX)</p>
+        </div>
+        <div class="roadmap-item">
+          <span>Q3 2025</span>
+          <p>Listing on CoinGecko, CoinMarketCap</p>
+        </div>
+        <div class="roadmap-item">
+          <span>Q4 2025</span>
+          <p>Global marketing campaign</p>
+        </div>
+        <div class="roadmap-item">
+          <span>Q1 2026</span>
+          <p>Migration to multiple blockchains</p>
+        </div>
+        <div class="roadmap-item">
+          <span>Q2 2026</span>
+          <p>Development of Web3 Bank ecosystem projects</p>
+        </div>
+      </div>
+    </div>
+    <div class="section">
       <h2 id="how-title">How It Works</h2>
       <div class="card">
         <p id="how-text">1. Create your Web3 wallet.<br>
            2. Mint or trade meme tokens.<br>
            3. Vote on the best memes to govern the platform.<br>
            4. Laugh your way to the top of the leaderboard!</p>
-      </div>
-    </div>
-      <div class="section">
-    <h2 id="roadmap-title">Roadmap</h2>
-    <div class="roadmap card">
-      <div class="roadmap-item">
-        <span>Q1 2025</span>
-        <p>Launch W3B token on MMM platform</p>
-      </div>
-      <div class="roadmap-item">
-        <span>Q2 2025</span>
-        <p>Listing on decentralized exchanges (DEX)</p>
-      </div>
-      <div class="roadmap-item">
-        <span>Q3 2025</span>
-        <p>Listing on CoinGecko, CoinMarketCap</p>
-      </div>
-      <div class="roadmap-item">
-        <span>Q4 2025</span>
-        <p>Global marketing campaign</p>
-      </div>
-      <div class="roadmap-item">
-        <span>Q1 2026</span>
-        <p>Migration to multiple blockchains</p>
-      </div>
-      <div class="roadmap-item">
-        <span>Q2 2026</span>
-        <p>Development of Web3 Bank ecosystem projects</p>
       </div>
     </div>
   </div>
@@ -315,91 +96,6 @@
       <a href="https://t.me/web3bank_meme" target="_blank"> Telegram</a>
     </div>
   </footer>
-
-  <script>
-    const translations = {
-      en: {
-        "header-title": "Web3 Bank",
-        "header-subtitle": "Your Gateway to the Funniest Decentralized Future!",
-        "welcome-title": "Welcome to Web3 Bank",
-        "welcome-text": "We're not just a bank; we're a crypto-mem adventure! At Web3 Bank, we combine the power of blockchain with the hilarity of internet culture. Get ready to laugh, earn, and meme your way to financial freedom.",
-        "why-title": "Why Web3 Bank?",
-        "why-list": [
-          "Earn tokens by sharing memes",
-          "Participate in meme-based governance",
-          "Access exclusive NFT memes",
-          "Join the funniest community on the blockchain"
-        ],
-        "tokenomics-title": "Tokenomics",
-        "tokenomics-text": "Our tokenomics are designed to ensure fairness, sustainability, and long-term growth for our community. Join us and become part of the decentralized future!",
-        "how-title": "How It Works",
-        "how-text": "1. Create your Web3 wallet.<br>2. Mint or trade meme tokens.<br>3. Vote on the best memes to govern the platform.<br>4. Laugh your way to the top of the leaderboard!",
-        "roadmap-title": "Roadmap",
-        "roadmap-items": [
-          "Launch W3B token on MMM platform",
-          "Listing on decentralized exchanges (DEX)",
-          "Listing on CoinGecko, CoinMarketCap",
-          "Global marketing campaign",
-          "Migration to multiple blockchains",
-          "Development of Web3 Bank ecosystem projects"
-        ]
-      },
-      ru: {
-        "header-title": "Web3 Банк",
-        "header-subtitle": "Ваш путь к самому веселому децентрализованному будущему!",
-        "welcome-title": "Добро пожаловать в Web3 Банк",
-        "welcome-text": "Мы не просто банк; мы крипто-мем приключение! В Web3 Банке мы объединяем мощь блокчейна с юмором интернет-культуры. Приготовьтесь смеяться, зарабатывать и мемить свой путь к финансовой свободе.",
-        "why-title": "Почему Web3 Банк?",
-        "why-list": [
-          "Зарабатывайте токены, делясь мемами",
-          "Участвуйте в управлении на основе мемов",
-          "Получите доступ к эксклюзивным NFT мемам",
-          "Присоединяйтесь к самому веселому сообществу на блокчейне"
-        ],
-        "tokenomics-title": "Токеномика",
-        "tokenomics-text": "Наша токеномика разработана для обеспечения справедливости, устойчивости и долгосрочного роста для нашего сообщества. Присоединяйтесь к нам и станьте частью децентрализованного будущего!",
-        "how-title": "Как это работает",
-        "how-text": "1. Создайте свой Web3 кошелек.<br>2. Чеканите или торгуйте мем-токенами.<br>3. Голосуйте за лучшие мемы для управления платформой.<br>4. Смейтесь до вершины лидерборда!",
-        "roadmap-title": "Дорожная карта",
-        "roadmap-items": [
-          "Запуск токена W3B на платформе MMM",
-          "Листинг на децентрализованных биржах (DEX)",
-          "Листинг на CoinGecko, CoinMarketCap",
-          "Глобальная маркетинговая кампания",
-          "Миграция на несколько блокчейнов",
-          "Разработка экосистемных проектов Web3 Bank"
-        ]
-      }
-    };
-
-    let currentLanguage = "en";
-
-    function toggleLanguage() {
-      currentLanguage = currentLanguage === "en" ? "ru" : "en";
-      document.getElementById("language-flag").src =
-        currentLanguage === "en"
-          ? "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
-          : "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg";
-
-      // Update all text elements
-      document.getElementById("header-title").innerText = translations[currentLanguage]["header-title"];
-      document.getElementById("header-subtitle").innerText = translations[currentLanguage]["header-subtitle"];
-      document.getElementById("welcome-title").innerText = translations[currentLanguage]["welcome-title"];
-      document.getElementById("welcome-text").innerHTML = translations[currentLanguage]["welcome-text"];
-      document.getElementById("why-title").innerText = translations[currentLanguage]["why-title"];
-      document.getElementById("why-list").innerHTML = translations[currentLanguage]["why-list"]
-        .map(item => `<li>${item}</li>`)
-        .join("");
-      document.getElementById("tokenomics-title").innerText = translations[currentLanguage]["tokenomics-title"];
-      document.getElementById("tokenomics-text").innerText = translations[currentLanguage]["tokenomics-text"];
-      document.getElementById("how-title").innerText = translations[currentLanguage]["how-title"];
-      document.getElementById("how-text").innerHTML = translations[currentLanguage]["how-text"];
-      const roadmapItems = document.querySelectorAll('.roadmap-item p');
-      roadmapItems.forEach((item, index) => {
-        item.textContent = translations[currentLanguage]["roadmap-items"][index];
-      });
-      document.getElementById("roadmap-title").innerText = translations[currentLanguage]["roadmap-title"];
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
