@@ -13,6 +13,21 @@ const translations = {
     ],
     "tokenomics-title": "Tokenomics",
     "tokenomics-text": "Our tokenomics are designed to ensure fairness, sustainability, and long-term growth for our community. Join us and become part of the decentralized future!",
+    "use-cases-title": "Token Use Cases",
+    "use-cases-items": [
+      "Meme Marketplace",
+      "Buy, sell, and trade meme NFTs using W3B tokens. Earn royalties from viral memes!",
+      "Decentralized Governance",
+      "Vote for platform upgrades and meme contests with your W3B tokens.",
+      "Meme Staking",
+      "Stake W3B to boost meme visibility and earn rewards.",
+      "Web3 Mem Games",
+      "Play meme-based blockchain games and win W3B prizes.",
+      "Meme Crowdfunding",
+      "Fund your meme projects using W3B tokens and community support.",
+      "Educational Memes",
+      "Learn blockchain basics through interactive meme courses (paid in W3B)."
+    ],
     "roadmap-title": "Roadmap",
     "roadmap-items": [
       "Launch W3B token on MMM platform",
@@ -39,6 +54,21 @@ const translations = {
     ],
     "tokenomics-title": "Токеномика",
     "tokenomics-text": "Наша токеномика разработана для обеспечения справедливости, устойчивости и долгосрочного роста для нашего сообщества. Присоединяйтесь к нам и станьте частью децентрализованного будущего!",
+    "use-cases-title": "Применение токена",
+    "use-cases-items": [
+      "Мем-маркетплейс",
+      "Покупайте, продавайте и обменивайте мемы в формате NFT с использованием токенов W3B. Получайте роялти от вирусных мемов!",
+      "Децентрализованное управление",
+      "Голосуйте за обновления платформы и мем-конкурсы с помощью токенов W3B.",
+      "Стейкинг мемов",
+      "Стейкайте W3B для повышения видимости мемов и получения наград.",
+      "Web3-игры с мемами",
+      "Играйте в блокчейн-игры на основе мемов и выигрывайте W3B!",
+      "Краудфандинг мемов",
+      "Финансируйте свои мем-проекты через токены W3B и поддержку сообщества.",
+      "Образовательные мемы",
+      "Изучайте основы блокчейна через интерактивные мем-курсы (оплата в W3B)."
+    ],
     "roadmap-title": "Дорожная карта",
     "roadmap-items": [
       "Запуск токена W3B на платформе MMM",
@@ -62,7 +92,7 @@ function toggleLanguage() {
       ? "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
       : "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg";
 
-  // Update all text elements
+  // Обновление заголовков и текстов
   document.getElementById("header-title").innerText = translations[currentLanguage]["header-title"];
   document.getElementById("header-subtitle").innerText = translations[currentLanguage]["header-subtitle"];
   document.getElementById("welcome-title").innerText = translations[currentLanguage]["welcome-title"];
@@ -73,6 +103,12 @@ function toggleLanguage() {
     .join("");
   document.getElementById("tokenomics-title").innerText = translations[currentLanguage]["tokenomics-title"];
   document.getElementById("tokenomics-text").innerText = translations[currentLanguage]["tokenomics-text"];
+  document.getElementById("use-cases-title").innerText = translations[currentLanguage]["use-cases-title"];
+  const useCaseCards = document.querySelectorAll('.use-case-card h3, .use-case-card p');
+  const useCasesItems = translations[currentLanguage]["use-cases-items"];
+  useCaseCards.forEach((card, index) => {
+    card.textContent = useCasesItems[index];
+  });
   document.getElementById("roadmap-title").innerText = translations[currentLanguage]["roadmap-title"];
   const roadmapItems = document.querySelectorAll('.roadmap-item p');
   roadmapItems.forEach((item, index) => {
