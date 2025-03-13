@@ -28,12 +28,19 @@ const translations = {
       "Educational Memes",
       "Learn blockchain basics through interactive meme courses (paid in W3B)."
     ],
+        "listings-title": "Token Listings",
+    "listings-items": [
+      "Trade W3B on decentralized exchanges",
+      "Check W3B metrics on CoinMarketCap",
+      "Track W3B price on CoinGecko"
+    ],
     "partners-title": "Our Partners",
     "partners-items": [
       "https://via.placeholder.com/200x100?text=Partner+1",
       "https://via.placeholder.com/200x100?text=Partner+2",
       "https://via.placeholder.com/200x100?text=Partner+3"
     ],
+    
     "roadmap-title": "Roadmap",
     "roadmap-items": [
       "Launch W3B token on MMM platform",
@@ -75,12 +82,19 @@ const translations = {
       "Образовательные мемы",
       "Изучайте основы блокчейна через интерактивные мем-курсы (оплата в W3B)."
     ],
-        "partners-title": "Наши партнеры",
+        "listings-title": "Листинги токена",
+    "listings-items": [
+      "Торгуйте W3B на децентрализованных биржах",
+      "Проверяйте метрики W3B на CoinMarketCap",
+      "Отслеживайте цену W3B на CoinGecko"
+    ],
+    "partners-title": "Наши партнеры",
     "partners-items": [
       "https://via.placeholder.com/200x100?text=Партнер+1",
       "https://via.placeholder.com/200x100?text=Партнер+2",
       "https://via.placeholder.com/200x100?text=Партнер+3"
     ],
+    
     "roadmap-title": "Дорожная карта",
     "roadmap-items": [
       "Запуск токена W3B на платформе MMM",
@@ -120,6 +134,12 @@ function toggleLanguage() {
   const useCasesItems = translations[currentLanguage]["use-cases-items"];
   useCaseCards.forEach((card, index) => {
     card.textContent = useCasesItems[index];
+  });
+    document.getElementById("listings-title").innerText = translations[currentLanguage]["listings-title"];
+  const exchangeCards = document.querySelectorAll('.exchange-card p');
+  const listingsItems = translations[currentLanguage]["listings-items"];
+  exchangeCards.forEach((card, index) => {
+    card.textContent = listingsItems[index];
   });
   document.getElementById("partners-title").innerText = translations[currentLanguage]["partners-title"];
   const partnerCards = document.querySelectorAll('.partner-card');
