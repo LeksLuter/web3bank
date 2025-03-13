@@ -75,7 +75,12 @@ const translations = {
       "Образовательные мемы",
       "Изучайте основы блокчейна через интерактивные мем-курсы (оплата в W3B)."
     ],
-    
+        "partners-title": "Наши партнеры",
+    "partners-items": [
+      "https://via.placeholder.com/200x100?text=Партнер+1",
+      "https://via.placeholder.com/200x100?text=Партнер+2",
+      "https://via.placeholder.com/200x100?text=Партнер+3"
+    ],
     "roadmap-title": "Дорожная карта",
     "roadmap-items": [
       "Запуск токена W3B на платформе MMM",
@@ -115,6 +120,13 @@ function toggleLanguage() {
   const useCasesItems = translations[currentLanguage]["use-cases-items"];
   useCaseCards.forEach((card, index) => {
     card.textContent = useCasesItems[index];
+  });
+  document.getElementById("partners-title").innerText = translations[currentLanguage]["partners-title"];
+  const partnerCards = document.querySelectorAll('.partner-card');
+  const partnerLogos = translations[currentLanguage]["partners-items"];
+  partnerCards.forEach((card, index) => {
+    card.querySelector('img').src = partnerLogos[index];
+    card.querySelector('img').alt = `Partner ${index + 1}`;
   });
   document.getElementById("roadmap-title").innerText = translations[currentLanguage]["roadmap-title"];
   const roadmapItems = document.querySelectorAll('.roadmap-item p');
