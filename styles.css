@@ -309,3 +309,7 @@ footer a:hover {
 .partner-card:hover .partner-logo {
   transform: scale(1.1);
 }
+/* Плавная прокрутка */
+html {
+  scroll-behavior: smooth;
+}
