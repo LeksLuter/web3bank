@@ -28,6 +28,12 @@ const translations = {
       "Educational Memes",
       "Learn blockchain basics through interactive meme courses (paid in W3B)."
     ],
+    "partners-title": "Our Partners",
+    "partners-items": [
+      "https://via.placeholder.com/200x100?text=Partner+1",
+      "https://via.placeholder.com/200x100?text=Partner+2",
+      "https://via.placeholder.com/200x100?text=Partner+3"
+    ],
     "roadmap-title": "Roadmap",
     "roadmap-items": [
       "Launch W3B token on MMM platform",
@@ -69,6 +75,7 @@ const translations = {
       "Образовательные мемы",
       "Изучайте основы блокчейна через интерактивные мем-курсы (оплата в W3B)."
     ],
+    
     "roadmap-title": "Дорожная карта",
     "roadmap-items": [
       "Запуск токена W3B на платформе MMM",
