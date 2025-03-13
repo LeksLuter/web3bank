@@ -235,6 +235,46 @@ footer a:hover {
   font-size: 1rem;
   line-height: 1.4;
 }
+/* Стили для раздела Token Listings */
+.exchanges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.exchange-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exchange-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.exchange-logo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.exchange-card:hover .exchange-logo {
+  transform: scale(1.1);
+}
+
+.exchange-card p {
+  color: #ffffff;
+  font-size: 1rem;
+  margin: 0;
+}
 /* стили для Partnerships */
 .partners-grid {
   display: grid;
