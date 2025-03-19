@@ -51,7 +51,7 @@ const translations = {
       "Development of Web3 Bank ecosystem projects"
     ],
     "how-title": "How It Works",
-    "how-text": "1. Create your Web3 wallet.<br>2. Mint or trade meme tokens.<br>3. Vote on the best memes to govern the platform.<br>4. Laugh your way to the top of the leaderboard!"
+    "how-text": "1. Create your Web3 wallet.<br>2. Mint or trade meme tokens.<br>3. Vote on the best memes to govern the platform.<br>4. Laugh your way to the top of the leaderboard!",
     
     "visit-counter": "Visits: {count}",
     "analytics-link": "View Analytics"
@@ -108,7 +108,8 @@ const translations = {
       "Разработка экосистемных проектов Web3 Bank"
     ],
     "how-title": "Как это работает",
-    "how-text": "1. Создайте свой Web3 кошелек.<br>2. Чеканите или торгуйте мем-токенами.<br>3. Голосуйте за лучшие мемы для управления платформой.<br>4. Смейтесь до вершины лидерборда!"
+    "how-text": "1. Создайте свой Web3 кошелек.<br>2. Чеканите или торгуйте мем-токенами.<br>3. Голосуйте за лучшие мемы для управления платформой.<br>4. Смейтесь до вершины лидерборда!",
+    
     "visit-counter": "Посещения: {count}",
     "analytics-link": "Посмотреть аналитику"
   }
