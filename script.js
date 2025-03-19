@@ -1,11 +1,3 @@
-function updateVisitCounter() {
-  let visits = localStorage.getItem('visits');
-  visits = visits ? parseInt(visits) + 1 : 1;
-  localStorage.setItem('visits', visits);
-  document.getElementById("visit-counter").textContent = `Visits: ${visits}`;
-}
-
-
 const translations = {
   en: {
     "header-title": "Web3 Bank",
@@ -172,6 +164,12 @@ function toggleLanguage() {
   const visits = localStorage.getItem('visits') || 0;
   document.getElementById("visit-counter").textContent = translations[currentLanguage]["visit-counter"].replace("{count}", visits);
   document.getElementById("analytics-link").textContent = translations[currentLanguage]["analytics-link"];
+}
+function updateVisitCounter() {
+  let visits = localStorage.getItem('visits');
+  visits = visits ? parseInt(visits) + 1 : 1;
+  localStorage.setItem('visits', visits);
+  document.getElementById("visit-counter").textContent = `Visits: ${visits}`;
 }
 // Запуск локального счётчика
 updateVisitCounter();
