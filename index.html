@@ -7,7 +7,16 @@
   <link rel="icon" href="https://i.imgur.com/MPGaJtZ.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
+
 <body>
   <header>
     <div class="language-switcher">
@@ -165,7 +174,7 @@
       </div>
     </div>
   </div>
-  <footer>
+ <footer>
     <p>&copy; 2025 Web3 Bank. All rights reserved. | 
       <a href="#">Terms of Service</a> | 
       <a href="#">Privacy Policy</a>
@@ -174,7 +183,12 @@
       <a href="https://x.com/web3_bank" target="_blank">𝕏</a>
       <a href="https://t.me/web3bank_meme" target="_blank"> Telegram</a>
     </div>
+    <div class="analytics-section">
+      <p id="visit-counter">Visits: 0</p>
+      <a href="https://analytics.google.com/analytics/web/" target="_blank" id="analytics-link">View Analytics</a>
+    </div>
   </footer>
   <script src="script.js"></script>
 </body>
 </html>
+
