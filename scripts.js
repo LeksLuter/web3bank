@@ -1,9 +1,18 @@
 const translations = {
   en: {
+    "nav-home": "Home",
+    "nav-why": "Why Us",
+    "nav-tokenomics": "Tokenomics",
+    "nav-use-cases": "Use Cases",
+    "nav-roadmap": "Roadmap",
+    "nav-listings": "Listings",
+    "nav-partners": "Partners",
+    
     "header-title": "Web3 Bank",
     "header-subtitle": "Your Gateway to the Funniest Decentralized Future!",
     "welcome-title": "Welcome to Web3 Bank",
     "welcome-text": "We're not just a bank; we're a crypto-mem adventure! At Web3 Bank, we combine the power of blockchain with the hilarity of internet culture. Get ready to laugh, earn, and meme your way to financial freedom.",
+
     "why-title": "Why Web3 Bank?",
     "why-list": [
       "Earn tokens by sharing memes",
@@ -22,17 +31,17 @@ const translations = {
       "Meme Staking",
       "Stake W3B to boost meme visibility and earn rewards.",
       "Web3 Mem Games",
-      "Play meme-based blockchain games and win W3B prizes.",
+      "Play meme-based blockchain games and win WTB prizes.",
       "Meme Crowdfunding",
-      "Fund your meme projects using W3B tokens and community support.",
+      "Fund your meme projects using WTB tokens and community support.",
       "Educational Memes",
-      "Learn blockchain basics through interactive meme courses (paid in W3B)."
+      "Learn blockchain basics through interactive meme courses (paid in WTB)."
     ],
-        "listings-title": "Token Listings",
+    "listings-title": "Token Listings",
     "listings-items": [
-      "Trade W3B on decentralized exchanges",
-      "Check W3B metrics on CoinMarketCap",
-      "Track W3B price on CoinGecko"
+      "Trade WTB on decentralized exchanges",
+      "Check WTB metrics on CoinMarketCap",
+      "Track WTB price on CoinGecko"
     ],
     "partners-title": "Our Partners",
     "partners-items": [
@@ -62,6 +71,15 @@ const translations = {
     "header-subtitle": "Ваш путь к самому веселому децентрализованному будущему!",
     "welcome-title": "Добро пожаловать в Web3 Банк",
     "welcome-text": "Мы не просто банк; мы крипто-мем приключение! В Web3 Банке мы объединяем мощь блокчейна с юмором интернет-культуры. Приготовьтесь смеяться, зарабатывать и мемить свой путь к финансовой свободе.",
+
+    "nav-home": "Главная",
+    "nav-why": "Почему мы",
+    "nav-tokenomics": "Токеномика",
+    "nav-use-cases": "Применение",
+    "nav-roadmap": "Дорожная карта",
+    "nav-listings": "Листинги",
+    "nav-partners": "Партнеры",
+    
     "why-title": "Почему Web3 Банк?",
     "why-list": [
       "Зарабатывайте токены, делясь мемами",
@@ -78,19 +96,19 @@ const translations = {
       "Децентрализованное управление",
       "Голосуйте за обновления платформы и мем-конкурсы с помощью токенов W3B.",
       "Стейкинг мемов",
-      "Стейкайте W3B для повышения видимости мемов и получения наград.",
+      "Стейкайте WTB для повышения видимости мемов и получения наград.",
       "Web3-игры с мемами",
-      "Играйте в блокчейн-игры на основе мемов и выигрывайте W3B!",
+      "Играйте в блокчейн-игры на основе мемов и выигрывайте WTB!",
       "Краудфандинг мемов",
-      "Финансируйте свои мем-проекты через токены W3B и поддержку сообщества.",
+      "Финансируйте свои мем-проекты через токены WTB и поддержку сообщества.",
       "Образовательные мемы",
-      "Изучайте основы блокчейна через интерактивные мем-курсы (оплата в W3B)."
+      "Изучайте основы блокчейна через интерактивные мем-курсы (оплата в WTB)."
     ],
         "listings-title": "Листинги токена",
     "listings-items": [
-      "Торгуйте W3B на децентрализованных биржах",
-      "Проверяйте метрики W3B на CoinMarketCap",
-      "Отслеживайте цену W3B на CoinGecko"
+      "Торгуйте WTB на децентрализованных биржах",
+      "Проверяйте метрики WTB на CoinMarketCap",
+      "Отслеживайте цену WTB на CoinGecko"
     ],
     "partners-title": "Наши партнеры",
     "partners-items": [
@@ -101,7 +119,7 @@ const translations = {
     
     "roadmap-title": "Дорожная карта",
     "roadmap-items": [
-      "Запуск токена W3B на платформе MMM",
+      "Запуск токена WTB на платформе MMM",
       "Листинг на децентрализованных биржах (DEX)",
       "Листинг на CoinGecko, CoinMarketCap",
       "Глобальная маркетинговая кампания",
