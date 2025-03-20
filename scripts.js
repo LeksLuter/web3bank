@@ -140,10 +140,11 @@ let currentLanguage = "en";
 function toggleLanguage() {
   currentLanguage = currentLanguage === "en" ? "ru" : "en";
   // Обновление флага
-  document.getElementById("language-flag").src =
-    currentLanguage === "en"
-      ? "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
-      : "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg";
+    // Обновление флага
+  document.getElementById("language-flag").src = 
+    currentLanguage === "en" 
+      ? "img/usa-flag.svg" 
+      : "img/russia-flag.svg";
 
   // Обновление заголовков и текстов
   document.getElementById("header-title").innerText = translations[currentLanguage]["header-title"];
