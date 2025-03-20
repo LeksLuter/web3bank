@@ -449,18 +449,17 @@ html {
     padding: 8px 0;
   }
 }
-/* Для гамбургер-меню */
-.mobile-menu-toggle {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1001; /* Выше, чем у меню */
-}
-
-/* Для кнопки языка */
+/* Для гамбургера и языковой кнопки */
+.mobile-menu-toggle,
 .language-switcher {
   position: fixed;
   top: 20px;
+  z-index: 1001;
+}
+.mobile-menu-toggle {
+  left: 20px;
+}
+
+.language-switcher {
   right: 20px;
-  z-index: 1001; /* Такой же как у гамбургера */
 }
