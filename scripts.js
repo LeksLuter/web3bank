@@ -139,7 +139,7 @@ let currentLanguage = "en";
 
 function toggleLanguage() {
   currentLanguage = currentLanguage === "en" ? "ru" : "en";
-  // Обновление флага
+
     // Обновление флага
   document.getElementById("language-flag").src = 
     currentLanguage === "en" 
@@ -196,7 +196,16 @@ function toggleLanguage() {
 function toggleMenu() {
   const navbar = document.getElementById("navbar");
   navbar.classList.toggle("active");
+  document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      toggleMenu();
+    }
+  });
+});
 }
+
+
 function updateVisitCounter() {
   let visits = localStorage.getItem('visits');
   visits = visits ? parseInt(visits) + 1 : 1;
