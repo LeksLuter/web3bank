@@ -121,6 +121,7 @@ let currentLanguage = "en";
 
 function toggleLanguage() {
   currentLanguage = currentLanguage === "en" ? "ru" : "en";
+  // Обновление флага
   document.getElementById("language-flag").src =
     currentLanguage === "en"
       ? "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
@@ -161,13 +162,18 @@ function toggleLanguage() {
   roadmapItems.forEach((item, index) => {
     item.textContent = translations[currentLanguage]["roadmap-items"][index];
   });
+   // Обновление ссылок в меню
+  const navLinks = document.querySelectorAll('.nav-links a');
+  translations[currentLanguage]["nav-links"].forEach((text, index) => {
+    navLinks[index].textContent = text;
+  });
   document.getElementById("how-title").innerText = translations[currentLanguage]["how-title"];
   document.getElementById("how-text").innerHTML = translations[currentLanguage]["how-text"];
     // Обновление локального счётчика и ссылки
   const visits = localStorage.getItem('visits') || 0;
   document.getElementById("visit-counter").textContent = translations[currentLanguage]["visit-counter"].replace("{count}", visits);
   document.getElementById("analytics-link").textContent = translations[currentLanguage]["analytics-link"];
-}
+  }
 function toggleMenu() {
   const navbar = document.getElementById("navbar");
   navbar.classList.toggle("active");
