@@ -6,6 +6,7 @@ body {
   background-size: cover;
   color: #ffffff;
   line-height: 1.6;
+  padding-top: 80px; /* Высота меню + отступ */
 }
 header {
   background: rgba(0, 0, 0, 0.6);
@@ -410,27 +411,30 @@ html {
   color: #ff7f50;
 }
 
-/* Адаптация для ПК */
+/* Для ПК: фиксированное меню */
 @media (min-width: 769px) {
-  .mobile-menu-toggle {
-    display: none;
-  }
-
   .navbar {
-    transform: translateY(0%);
-    background: transparent;
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Фон для видимости */
+    padding: 20px;
+    z-index: 1000; /* Выше других элементов */
+    transform: none !important; /* Отмена скрытия */
+    display: flex;
+    justify-content: center;
   }
 
   .nav-links {
     flex-direction: row;
     gap: 30px;
   }
-}
+
+  .nav-links a {
+    color: #4ade80;
+    padding: 10px 15px;
+  }
 
 /* Адаптация для мобильных */
 @media (max-width: 768px) {
