@@ -1,5 +1,7 @@
 const translations = {
   en: {
+    "header-title": "Web3 Bank",
+    "header-subtitle": "Your Gateway to the Funniest Decentralized Future!",
     "nav-home": "Home",
     "nav-why": "Why Us",
     "nav-tokenomics": "Tokenomics",
@@ -7,29 +9,26 @@ const translations = {
     "nav-roadmap": "Roadmap",
     "nav-listings": "Listings",
     "nav-partners": "Partners",
-    
-    "header-title": "Web3 Bank",
-    "header-subtitle": "Your Gateway to the Funniest Decentralized Future!",
     "welcome-title": "Welcome to Web3 Bank",
-    "welcome-text": "We're not just a bank; we're a crypto-mem adventure! At Web3 Bank, we combine the power of blockchain with the hilarity of internet culture. Get ready to laugh, earn, and meme your way to financial freedom.",
-
+    "welcome-text": "🔥 Welcome to Web3 Bank — Where Memes Meet Money! Say goodbye to boring finance! Join a decentralized community where every meme you create or share can earn you WTB tokens. Powered by blockchain, we turn laughter into real value. Start your journey today — earn, vote, and build the future of meme-driven finance with us!",
     "why-title": "Why Web3 Bank?",
     "why-list": [
-      "Earn tokens by sharing memes",
-      "Participate in meme-based governance",
-      "Access exclusive NFT memes",
-      "Join the funniest community on the blockchain"
+      "Earn While You Meme: Get rewarded with WTB tokens for every viral meme you share.",
+      "Shape the Future: Vote on platform upgrades and meme contests with your tokens.",
+      "Exclusive NFT Drops: Unlock limited-edition memes that can’t be found anywhere else.",
+      "Community-Driven: Join 10,000+ memers building a decentralized economy together.",
+      "Secure & Transparent: Built on blockchain — no hidden fees, no middlemen."
     ],
     "tokenomics-title": "Tokenomics",
     "tokenomics-text": "Our tokenomics are designed to ensure fairness, sustainability, and long-term growth for our community. Join us and become part of the decentralized future!",
     "use-cases-title": "Token Use Cases",
     "use-cases-items": [
       "Meme Marketplace",
-      "Buy, sell, and trade meme NFTs using W3B tokens. Earn royalties from viral memes!",
+      "Buy, sell, and trade meme NFTs using WTB tokens. Earn royalties from viral memes!",
       "Decentralized Governance",
-      "Vote for platform upgrades and meme contests with your W3B tokens.",
+      "Vote for platform upgrades and meme contests with your WTB tokens.",
       "Meme Staking",
-      "Stake W3B to boost meme visibility and earn rewards.",
+      "Stake WTB to boost meme visibility and earn rewards.",
       "Web3 Mem Games",
       "Play meme-based blockchain games and win WTB prizes.",
       "Meme Crowdfunding",
@@ -39,20 +38,21 @@ const translations = {
     ],
     "listings-title": "Token Listings",
     "listings-items": [
-      "Trade WTB on decentralized exchanges",
-      "Check WTB metrics on CoinMarketCap",
-      "Track WTB price on CoinGecko"
+      "Trade WTB on Pump.Fun",
+      "Track WTB metrics on DexScreener",
+      "Check WTB price on DexTools",
+      "Raydium listing (coming soon)",
+      "CoinGecko listing (coming soon)"
     ],
     "partners-title": "Our Partners",
     "partners-items": [
-      "https://via.placeholder.com/200x100?text=Partner+1",
-      "https://via.placeholder.com/200x100?text=Partner+2",
-      "https://via.placeholder.com/200x100?text=Partner+3"
+      "Partner 1",
+      "Partner 2",
+      "Partner 3"
     ],
-    
     "roadmap-title": "Roadmap",
     "roadmap-items": [
-      "Launch W3B token on MMM platform",
+      "Launch WTB token on MMM platform",
       "Listing on decentralized exchanges (DEX)",
       "Listing on CoinGecko, CoinMarketCap",
       "Global marketing campaign",
@@ -60,18 +60,13 @@ const translations = {
       "Development of Web3 Bank ecosystem projects"
     ],
     "how-title": "How It Works",
-    "how-text": "1. Create your Web3 wallet.<br>2. Mint or trade meme tokens.<br>3. Vote on the best memes to govern the platform.<br>4. Laugh your way to the top of the leaderboard!",
-    
+    "how-text": "1. Create your Web3 wallet.<br>2. Mint or trade WTB meme tokens.<br>3. Vote on the best memes to govern the platform.<br>4. Laugh your way to the top of the leaderboard!",
     "visit-counter": "Visits: {count}",
-    "analytics-link": "View Analytics",
-    "nav-links": ["Home", "Why Us", "Tokenomics", "Use Cases", "Roadmap", "Listings", "Partners"]
+    "analytics-link": "View Analytics"
   },
   ru: {
     "header-title": "Web3 Банк",
     "header-subtitle": "Ваш путь к самому веселому децентрализованному будущему!",
-    "welcome-title": "Добро пожаловать в Web3 Банк",
-    "welcome-text": "Мы не просто банк; мы крипто-мем приключение! В Web3 Банке мы объединяем мощь блокчейна с юмором интернет-культуры. Приготовьтесь смеяться, зарабатывать и мемить свой путь к финансовой свободе.",
-
     "nav-home": "Главная",
     "nav-why": "Почему мы",
     "nav-tokenomics": "Токеномика",
@@ -79,22 +74,24 @@ const translations = {
     "nav-roadmap": "Дорожная карта",
     "nav-listings": "Листинги",
     "nav-partners": "Партнеры",
-    
+    "welcome-title": "Добро пожаловать в Web3 Банк",
+    "welcome-text": "🔥 Добро пожаловать в Web3 Банк — где мемы встречаются с деньгами! Забудьте о скучных финансах! Присоединяйтесь к децентрализованному сообществу, где каждый мем, который вы создаете или делитесь, приносит токены WTB. На основе блокчейна мы превращаем смех в реальную ценность. Начните свой путь сегодня — зарабатывайте, голосуйте и создавайте будущее мем-экономики вместе с нами!",
     "why-title": "Почему Web3 Банк?",
     "why-list": [
-      "Зарабатывайте токены, делясь мемами",
-      "Участвуйте в управлении на основе мемов",
-      "Получите доступ к эксклюзивным NFT мемам",
-      "Присоединяйтесь к самому веселому сообществу на блокчейне"
+      "Зарабатывай, веселясь: Получайте токены WTB за каждый вирусный мем.",
+      "Управляйте платформой: Голосуйте за обновления и конкурсы мемов с помощью токенов.",
+      "Эксклюзивные NFT: Получайте доступ к уникальным мемам, которых нет больше нигде.",
+      "Сообщество из 10,000+ мемеров: Вместе создаем децентрализованную экономику.",
+      "Безопасность блокчейна: Никаких скрытых комиссий и посредников."
     ],
     "tokenomics-title": "Токеномика",
     "tokenomics-text": "Наша токеномика разработана для обеспечения справедливости, устойчивости и долгосрочного роста для нашего сообщества. Присоединяйтесь к нам и станьте частью децентрализованного будущего!",
     "use-cases-title": "Применение токена",
     "use-cases-items": [
       "Мем-маркетплейс",
-      "Покупайте, продавайте и обменивайте мемы в формате NFT с использованием токенов W3B. Получайте роялти от вирусных мемов!",
+      "Покупайте, продавайте и обменивайте мемы в формате NFT с использованием токенов WTB. Получайте роялти от вирусных мемов!",
       "Децентрализованное управление",
-      "Голосуйте за обновления платформы и мем-конкурсы с помощью токенов W3B.",
+      "Голосуйте за обновления платформы и мем-конкурсы с помощью токенов WTB.",
       "Стейкинг мемов",
       "Стейкайте WTB для повышения видимости мемов и получения наград.",
       "Web3-игры с мемами",
@@ -104,19 +101,20 @@ const translations = {
       "Образовательные мемы",
       "Изучайте основы блокчейна через интерактивные мем-курсы (оплата в WTB)."
     ],
-        "listings-title": "Листинги токена",
+    "listings-title": "Листинги токена",
     "listings-items": [
-      "Торгуйте WTB на децентрализованных биржах",
-      "Проверяйте метрики WTB на CoinMarketCap",
-      "Отслеживайте цену WTB на CoinGecko"
+      "Торгуйте WTB на Pump.Fun",
+      "Отслеживайте метрики WTB на DexScreener",
+      "Проверяйте цену WTB на DexTools",
+      "Листинг на Raydium (скоро)",
+      "Листинг на CoinGecko (скоро)"
     ],
     "partners-title": "Наши партнеры",
     "partners-items": [
-      "https://via.placeholder.com/200x100?text=Партнер+1",
-      "https://via.placeholder.com/200x100?text=Партнер+2",
-      "https://via.placeholder.com/200x100?text=Партнер+3"
+      "Партнер 1",
+      "Партнер 2",
+      "Партнер 3"
     ],
-    
     "roadmap-title": "Дорожная карта",
     "roadmap-items": [
       "Запуск токена WTB на платформе MMM",
@@ -127,11 +125,9 @@ const translations = {
       "Разработка экосистемных проектов Web3 Bank"
     ],
     "how-title": "Как это работает",
-    "how-text": "1. Создайте свой Web3 кошелек.<br>2. Чеканите или торгуйте мем-токенами.<br>3. Голосуйте за лучшие мемы для управления платформой.<br>4. Смейтесь до вершины лидерборда!",
-    
+    "how-text": "1. Создайте свой Web3 кошелек.<br>2. Чеканьте или торгуйте токенами WTB.<br>3. Голосуйте за лучшие мемы для управления платформой.<br>4. Смейтесь до вершины лидерборда!",
     "visit-counter": "Посещения: {count}",
-    "analytics-link": "Посмотреть аналитику",
-    "nav-links": ["Главная", "Почему мы", "Токеномика", "Применение", "Дорожная карта", "Листинги", "Партнеры"]
+    "analytics-link": "Посмотреть аналитику"
   }
 };
 
@@ -139,78 +135,72 @@ let currentLanguage = "en";
 
 function toggleLanguage() {
   currentLanguage = currentLanguage === "en" ? "ru" : "en";
-
-    // Обновление флага
+  
+  // Обновление флага
   document.getElementById("language-flag").src = 
     currentLanguage === "en" 
       ? "img/usa-flag.svg" 
       : "img/russia-flag.svg";
 
-  // Обновление заголовков и текстов
-  document.getElementById("header-title").innerText = translations[currentLanguage]["header-title"];
-  document.getElementById("header-subtitle").innerText = translations[currentLanguage]["header-subtitle"];
-  document.getElementById("welcome-title").innerText = translations[currentLanguage]["welcome-title"];
-  document.getElementById("welcome-text").innerHTML = translations[currentLanguage]["welcome-text"];
-  document.getElementById("why-title").innerText = translations[currentLanguage]["why-title"];
-  document.getElementById("why-list").innerHTML = translations[currentLanguage]["why-list"]
-    .map(item => `<li>${item}</li>`)
-    .join("");
-  document.getElementById("tokenomics-title").innerText = translations[currentLanguage]["tokenomics-title"];
-  document.getElementById("tokenomics-text").innerText = translations[currentLanguage]["tokenomics-text"];
-  document.getElementById("use-cases-title").innerText = translations[currentLanguage]["use-cases-title"];
-  const useCaseCards = document.querySelectorAll('.use-case-card h3, .use-case-card p');
-  const useCasesItems = translations[currentLanguage]["use-cases-items"];
-  useCaseCards.forEach((card, index) => {
-    card.textContent = useCasesItems[index];
+  // Обновление всех текстовых элементов
+  Object.keys(translations[currentLanguage]).forEach(key => {
+    const element = document.getElementById(key);
+    if (element) {
+      element.textContent = translations[currentLanguage][key];
+    }
   });
-    document.getElementById("listings-title").innerText = translations[currentLanguage]["listings-title"];
-  const exchangeCards = document.querySelectorAll('.exchange-card p');
-  const listingsItems = translations[currentLanguage]["listings-items"];
-  exchangeCards.forEach((card, index) => {
-    card.textContent = listingsItems[index];
+
+  // Обновление списков
+  document.getElementById("why-list").innerHTML = 
+    translations[currentLanguage]["why-list"]
+      .map(item => `<li>${item}</li>`)
+      .join("");
+
+  const useCaseElements = document.querySelectorAll('.use-case-card h3, .use-case-card p');
+  const useCaseItems = translations[currentLanguage]["use-cases-items"];
+  useCaseElements.forEach((el, index) => {
+    el.textContent = useCaseItems[index];
   });
-  document.getElementById("partners-title").innerText = translations[currentLanguage]["partners-title"];
-  const partnerCards = document.querySelectorAll('.partner-card');
-  const partnerLogos = translations[currentLanguage]["partners-items"];
-  partnerCards.forEach((card, index) => {
-    card.querySelector('img').src = partnerLogos[index];
-    card.querySelector('img').alt = `Partner ${index + 1}`;
+
+  const listingElements = document.querySelectorAll('.exchange-card p');
+  const listingItems = translations[currentLanguage]["listings-items"];
+  listingElements.forEach((el, index) => {
+    el.textContent = listingItems[index];
   });
-  document.getElementById("roadmap-title").innerText = translations[currentLanguage]["roadmap-title"];
+
   const roadmapItems = document.querySelectorAll('.roadmap-item p');
-  roadmapItems.forEach((item, index) => {
-    item.textContent = translations[currentLanguage]["roadmap-items"][index];
+  roadmapItems.forEach((el, index) => {
+    el.textContent = translations[currentLanguage]["roadmap-items"][index];
   });
-   // Обновление ссылок в меню
-  const navLinks = document.querySelectorAll('.nav-links a');
-  translations[currentLanguage]["nav-links"].forEach((text, index) => {
-    navLinks[index].textContent = text;
-  });
-  document.getElementById("how-title").innerText = translations[currentLanguage]["how-title"];
-  document.getElementById("how-text").innerHTML = translations[currentLanguage]["how-text"];
-    // Обновление локального счётчика и ссылки
+
+  // Обновление счетчика посещений
   const visits = localStorage.getItem('visits') || 0;
-  document.getElementById("visit-counter").textContent = translations[currentLanguage]["visit-counter"].replace("{count}", visits);
-  document.getElementById("analytics-link").textContent = translations[currentLanguage]["analytics-link"];
-  }
+  document.getElementById("visit-counter").textContent = 
+    translations[currentLanguage]["visit-counter"].replace("{count}", visits);
+}
+
 function toggleMenu() {
   const navbar = document.getElementById("navbar");
   navbar.classList.toggle("active");
+  
+  // Закрытие меню при клике на ссылку (мобильная версия)
   document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
-      toggleMenu();
-    }
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navbar.classList.remove("active");
+      }
+    });
   });
-});
 }
 
-
+// Счетчик посещений
 function updateVisitCounter() {
   let visits = localStorage.getItem('visits');
   visits = visits ? parseInt(visits) + 1 : 1;
   localStorage.setItem('visits', visits);
-  document.getElementById("visit-counter").textContent = `Visits: ${visits}`;
+  document.getElementById("visit-counter").textContent = 
+    currentLanguage === "en" 
+      ? `Visits: ${visits}` 
+      : `Посещения: ${visits}`;
 }
-// Запуск локального счётчика
 updateVisitCounter();
