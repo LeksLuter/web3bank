@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quest Room - Web3 Bank</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Меню сайта -->
+  <nav class="navbar" id="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#why-section">Why Us</a></li>
+      <li><a href="quest-room.html">Quest Room</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="language-switcher">
+      <img src="img/usa-flag.svg" alt="English Flag" class="flag-icon" id="language-flag" onclick="toggleLanguage()">
+    </div>
+    <h1 id="header-title">Quest Room</h1>
+  </header>
+
+  <div class="container">
+    <!-- Блок авторизации -->
+    <div class="auth-card">
+      <button onclick="showLoginForm()" class="cta-button">Authorize with Wallet</button>
+      <div id="login-modal" class="modal hidden">
+        <h3>Login</h3>
+        <input type="text" id="wallet-address" placeholder="Your Wallet Address">
+        <button onclick="login()" class="cta-button">Sign In</button>
+      </div>
+    </div>
+
+    <!-- Информация о пользователе -->
+    <div class="user-card hidden">
+      <h2>User Profile</h2>
+      <p>Connected Wallet: <span id="user-wallet"></span></p>
+      <p>Completed Tasks: <span id="tasks-completed">0</span></p>
+    </div>
+
+    <!-- Список заданий -->
+    <div class="quests-container">
+      <h2>Available Quests</h2>
+      <div id="quests-list">
+        <!-- Задания будут добавляться через скрипт -->
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+  <script>
+    // Инициализация квестов
+    const quests = [
+      { title: "Follow Web3 Bank on X", points: 10 },
+      { title: "Mint first meme NFT", points: 50 }
+    ];
+
+    // Функции для квест-рума (полный код в scripts.js)
+  </script>
+</body>
+</html>
