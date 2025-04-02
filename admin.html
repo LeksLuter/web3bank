@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Web3 Bank</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Меню сайта -->
+  <nav class="navbar" id="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quest-room.html">Quest Room</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div id="admin-content">
+      <!-- Форма входа -->
+      <div class="auth-card">
+        <input type="password" id="admin-pass" placeholder="Admin Password">
+        <button onclick="adminLogin()" class="cta-button">Enter Admin</button>
+      </div>
+
+      <!-- Блок управления заданиями (скрыт до входа) -->
+      <div id="admin-panel" class="hidden">
+        <h2>Add New Quest</h2>
+        <input type="text" id="new-quest-title" placeholder="Quest title">
+        <input type="number" id="new-quest-points" placeholder="Points">
+        <button onclick="addQuest()" class="cta-button">Add Quest</button>
+        <button onclick="logoutAdmin()" class="cta-button">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
