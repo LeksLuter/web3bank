@@ -204,3 +204,75 @@ function updateVisitCounter() {
       : `Посещения: ${visits}`;
 }
 updateVisitCounter();
+// Добавьте в конец файла
+let loggedInUser = null;
+const adminPassword = "web3bank2025"; // Пароль админки
+const quests = localStorage.getItem("quests") ? JSON.parse(localStorage.getItem("quests")) : [];
+
+// Авторизация через кошелек
+function showLoginForm() {
+  document.getElementById("login-modal").classList.remove("hidden");
+}
+
+async function login() {
+  const wallet = document.getElementById("wallet-address").value;
+  if (!wallet) return alert("Enter wallet address!");
+  
+  // Подключение кошелька (пример)
+  loggedInUser = { wallet: wallet, tasks: [] };
+  updateUserInfo();
+  document.getElementById("login-modal").classList.add("hidden");
+}
+
+function updateUserInfo() {
+  const userCard = document.querySelector(".user-card");
+  userCard.classList.remove("hidden");
+  document.getElementById("user-wallet").textContent = loggedInUser.wallet;
+  document.getElementById("tasks-completed").textContent = loggedInUser.tasks.length;
+}
+
+// Админка
+function adminLogin() {
+  const pass = document.getElementById("admin-pass").value;
+  if (pass === adminPassword) {
+    document.getElementById("admin-panel").classList.remove("hidden");
+    document.getElementById("admin-pass").classList.add("hidden");
+  }
+}
+
+function logoutAdmin() {
+  document.getElementById("admin-panel").classList.add("hidden");
+  document.getElementById("admin-pass").classList.remove("hidden");
+}
+
+function addQuest() {
+  const title = document.getElementById("new-quest-title").value;
+  const points = document.getElementById("new-quest-points").value;
+  if (!title || !points) return alert("Fill all fields!");
+
+  quests.push({ title, points });
+  localStorage.setItem("quests", JSON.stringify(quests));
+  alert("Quest added!");
+}
+
+// Отображение заданий на Quest Room
+function loadQuests() {
+  const questsList = document.getElementById("quests-list");
+  quests.forEach(quest => {
+    const item = `
+      <details>
+        <summary>${quest.title}</summary>
+        <p>Points: ${quest.points}</p>
+        <button onclick="completeQuest('${quest.title}')">Complete</button>
+      </details>
+    `;
+    questsList.innerHTML += item;
+  });
+}
+loadQuests();
+
+function completeQuest(title) {
+  if (!loggedInUser) return alert("Authorize first!");
+  loggedInUser.tasks.push(title);
+  updateUserInfo();
+}
