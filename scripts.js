@@ -136,188 +136,174 @@ const translations = {
 };
 
 let currentLanguage = "en";
-let loggedInUser = null;
 
-// Улучшенное переключение языка
+// Переключение языка
 function toggleLanguage() {
   currentLanguage = currentLanguage === "en" ? "ru" : "en";
-  const flag = document.getElementById("language-flag");
+
+  document.querySelector(".auth-button").textContent = 
+  translations[currentLanguage]["auth-title"];
   
-  // Безопасное обновление флага
+  // Обновление флага
+  const flag = document.getElementById("language-flag");
   flag.src = currentLanguage === "en" 
     ? "img/usa-flag.svg" 
     : "img/russia-flag.svg";
-  flag.alt = `${currentLanguage.toUpperCase()} Language`;
-
-  // Обновление текстовых элементов
-  Object.entries(translations[currentLanguage]).forEach(([key, value]) => {
-    const elements = document.querySelectorAll(`[data-translate="${key}"]`);
-    elements.forEach(el => {
-      if (el.tagName === "INPUT") {
-        el.placeholder = value;
-      } else {
-        el.textContent = value;
-      }
-    });
+  
+  // Обновление всех элементов
+  Object.keys(translations[currentLanguage]).forEach(key => {
+    const element = document.getElementById(key);
+    if (element) {
+      element.textContent = translations[currentLanguage][key];
+    }
   });
 
-  // Безопасное обновление списков
-  const updateList = (selector, items) => {
-    const list = document.querySelector(selector);
-    if (!list) return;
-    
-    list.textContent = "";
-    items.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      list.appendChild(li);
-    });
-  };
+  // Обновление списков
+  const whyList = document.getElementById("why-list");
+  whyList.innerHTML = translations[currentLanguage]["why-list"]
+    .map(item => `<li>${item}</li>`)
+    .join("");
 
-  updateList("#why-list", translations[currentLanguage]["why-list"]);
-  updateList("#roadmap-items", translations[currentLanguage]["roadmap-items"]);
+  const useCases = document.querySelectorAll(".use-case-card h3, .use-case-card p");
+  const useCaseItems = translations[currentLanguage]["use-cases-items"];
+  useCases.forEach((el, index) => {
+    el.textContent = useCaseItems[index];
+  });
+
+  const listings = document.querySelectorAll(".exchange-card p");
+  const listingItems = translations[currentLanguage]["listings-items"];
+  listings.forEach((el, index) => {
+    el.textContent = listingItems[index];
+  });
+
+  const roadmapItems = document.querySelectorAll(".roadmap-item p");
+  roadmapItems.forEach((el, index) => {
+    el.textContent = translations[currentLanguage]["roadmap-items"][index];
+  });
+
+  // Обновление счетчика
+  const visits = localStorage.getItem("visits") || 0;
+  const counterText = translations[currentLanguage]["visit-counter"].replace("{count}", visits);
+  document.getElementById("visit-counter").textContent = counterText;
 }
 
-// Управление меню
+// Меню
 function toggleMenu() {
   const navbar = document.getElementById("navbar");
   navbar.classList.toggle("active");
-
-  // Закрытие меню на мобильных
-  if (window.innerWidth <= 768) {
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => navbar.classList.remove("active"));
-    });
-  }
-}
-
-// Модальное окно
-const modal = {
-  show: () => {
-    document.getElementById("auth-modal").classList.remove("hidden");
-    document.getElementById("modal-overlay").classList.remove("hidden");
-  },
   
-  hide: () => {
-    document.getElementById("auth-modal").classList.add("hidden");
-    document.getElementById("modal-overlay").classList.add("hidden");
-  }
-};
+  // Закрытие меню при клике на ссылку (мобильные)
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        navbar.classList.remove("active");
+      }
+    });
+  });
+}
 
-// Подключение кошелька
+// Авторизация
+let loggedInUser = null;
+
+// Открытие модального окна
+function showModal() {
+  document.getElementById("auth-modal").classList.remove("hidden");
+  document.getElementById("modal-overlay").classList.remove("hidden");
+}
+
+// Закрытие модального окна
+function hideModal() {
+  document.getElementById("auth-modal").classList.add("hidden");
+  document.getElementById("modal-overlay").classList.add("hidden");
+}
+
+// Закрытие при клике на оверлей
+document.getElementById("modal-overlay").addEventListener("click", hideModal);
+
 async function connectFantom() {
-  try {
-    if (typeof window.fantom === "undefined") {
-      throw new Error("Fantom Wallet не обнаружен!");
-    }
-
+  if (window.fantom) {
     const accounts = await window.fantom.enable();
-    if (!accounts || accounts.length === 0) {
-      throw new Error("Не удалось получить аккаунты");
-    }
-
-    loggedInUser = { wallet: accounts[0], tasks: [] };
-    updateUserInfo();
-    modal.hide();
-  } catch (error) {
-    console.error("Connection error:", error);
-    alert(error.message);
+    alert(`Connected: ${accounts[0]}`);
+    hideModal();
+  } else {
+    alert("Fantom Wallet не обнаружен!");
   }
 }
 
-// Управление пользователем
-const user = {
-  update: () => {
-    const userCard = document.querySelector(".user-card");
-    if (!userCard || !loggedInUser) return;
+// Квесты
+const adminPassword = "web3bank2025";
+const quests = localStorage.getItem("quests") 
+  ? JSON.parse(localStorage.getItem("quests"))
+  : [];
 
+function login() {
+  const wallet = document.getElementById("wallet-address").value;
+  if (!wallet) return alert("Введите адрес кошелька!");
+  loggedInUser = { wallet, tasks: [] };
+  updateUserInfo();
+  hideModal();
+}
+
+function updateUserInfo() {
+  const userCard = document.querySelector(".user-card");
+  if (userCard) {
     userCard.classList.remove("hidden");
     document.getElementById("user-wallet").textContent = loggedInUser.wallet;
-    document.getElementById("tasks-completed").textContent = 
-      loggedInUser.tasks.length;
-  },
-
-  logout: () => {
-    loggedInUser = null;
-    document.querySelector(".user-card").classList.add("hidden");
+    document.getElementById("tasks-completed").textContent = loggedInUser.tasks.length;
   }
-};
-
-// Управление квестами
-const questManager = {
-  load: () => {
-    try {
-      const questsList = document.getElementById("quests-list");
-      const savedQuests = JSON.parse(localStorage.getItem("quests")) || [];
-      
-      questsList.textContent = "";
-      savedQuests.forEach(quest => {
-        const item = document.createElement("div");
-        item.innerHTML = `
-          <details>
-            <summary>${escapeHTML(quest.title)}</summary>
-            <p>Points: ${quest.points}</p>
-            <button onclick="completeQuest('${escapeHTML(quest.title)}')">
-              Complete
-            </button>
-          </details>
-        `;
-        questsList.appendChild(item);
-      });
-    } catch (error) {
-      console.error("Error loading quests:", error);
-    }
-  },
-
-  add: () => {
-    const title = document.getElementById("new-quest-title").value.trim();
-    const points = document.getElementById("new-quest-points").value.trim();
-
-    if (!title || !points) {
-      alert("Заполните все поля!");
-      return;
-    }
-
-    try {
-      const quests = JSON.parse(localStorage.getItem("quests")) || [];
-      quests.push({ title, points });
-      localStorage.setItem("quests", JSON.stringify(quests));
-      questManager.load();
-    } catch (error) {
-      console.error("Error saving quest:", error);
-    }
-  }
-};
-
-// Защита от XSS
-function escapeHTML(str) {
-  return str.replace(/[&<>"']/g, 
-    match => ({
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#39;'
-    }[match]));
 }
 
-// Инициализация
-document.addEventListener("DOMContentLoaded", () => {
-  // Счетчик посещений
-  const updateVisitCounter = () => {
-    try {
-      let visits = localStorage.getItem("visits") || 0;
-      visits = parseInt(visits) + 1;
-      localStorage.setItem("visits", visits);
-      
-      const counterText = translations[currentLanguage]["visit-counter"]
-        .replace("{count}", visits);
-      document.getElementById("visit-counter").textContent = counterText;
-    } catch (error) {
-      console.error("Error updating visit counter:", error);
-    }
-  };
+function addQuest() {
+  const title = document.getElementById("new-quest-title").value;
+  const points = document.getElementById("new-quest-points").value;
+  if (!title || !points) return alert("Заполните все поля!");
+  quests.push({ title, points });
+  localStorage.setItem("quests", JSON.stringify(quests));
+  alert("Задание добавлено!");
+}
 
-  updateVisitCounter();
-  questManager.load();
-});
+function loadQuests() {
+  const questsList = document.getElementById("quests-list");
+  quests.forEach(quest => {
+    const item = `
+      <details>
+        <summary>${quest.title}</summary>
+        <p>Points: ${quest.points}</p>
+        <button onclick="completeQuest('${quest.title}')">Complete</button>
+      </details>
+    `;
+    questsList.innerHTML += item;
+  });
+}
+loadQuests();
+
+function completeQuest(title) {
+  if (!loggedInUser) return alert("Авторизуйтесь!");
+  loggedInUser.tasks.push(title);
+  updateUserInfo();
+}
+
+// Админка
+function adminLogin() {
+  const pass = document.getElementById("admin-pass").value;
+  if (pass === adminPassword) {
+    document.getElementById("admin-panel").classList.remove("hidden");
+    document.getElementById("admin-pass").classList.add("hidden");
+  }
+}
+
+function logoutAdmin() {
+  document.getElementById("admin-panel").classList.add("hidden");
+  document.getElementById("admin-pass").classList.remove("hidden");
+}
+
+// Счетчик посещений
+function updateVisitCounter() {
+  let visits = localStorage.getItem("visits");
+  visits = visits ? parseInt(visits) + 1 : 1;
+  localStorage.setItem("visits", visits);
+  const counterText = translations[currentLanguage]["visit-counter"].replace("{count}", visits);
+  document.getElementById("visit-counter").textContent = counterText;
+  
+}
+updateVisitCounter();
