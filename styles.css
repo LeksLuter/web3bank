@@ -197,7 +197,7 @@ header {
 
 /* Кнопка входа */
 .auth-button-container {
-position: static;
+/*position: static;*/
   z-index: 1002;
 }
 
