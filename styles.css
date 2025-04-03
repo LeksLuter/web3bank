@@ -167,12 +167,18 @@ header {
   }
 }
 
-/* Кнопка флага */
-.language-switcher {
+/* Группируем кнопки в header */
+.header-controls {
   position: fixed;
   top: 20px;
-  right: 20px; /* Исправлено положение (было 90px) */
+  right: 20px; /* Общий отступ справа */
   z-index: 1001;
+  display: flex;
+  gap: 15px; /* Расстояние между кнопками */
+}
+/* Кнопка флага */
+.language-switcher {
+  position: static;
   cursor: pointer;
 }
 
@@ -191,10 +197,7 @@ header {
 
 /* Кнопка входа */
 .auth-button-container {
-  position: fixed;
-  /*top: 20px;*/
-  right: 60px; /* Исправлено положение (было 90px) */
-  z-index: 1001;
+position: static;
 }
 
 .auth-button {
@@ -596,5 +599,11 @@ footer p {
   /* Скрываем гамбургер на ПК */
   .mobile-menu-toggle {
     display: none;
+  }
+}
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .header-controls {
+    gap: 10px; /* Меньше расстояние на мобильных */
   }
 }
