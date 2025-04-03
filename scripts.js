@@ -1,3 +1,4 @@
+// Переводы для локализации
 const translations = {
   en: {
     "header-title": "Web3 Bank",
@@ -46,7 +47,7 @@ const translations = {
     ],
     "partners-title": "Our Partners",
     "partners-items": [
-      "Partner 1",
+      "Zealy.io",
       "Partner 2",
       "Partner 3"
     ],
@@ -113,7 +114,7 @@ const translations = {
     ],
     "partners-title": "Наши партнеры",
     "partners-items": [
-      "Партнер 1",
+      "Zealy.io",
       "Партнер 2",
       "Партнер 3"
     ],
@@ -139,41 +140,35 @@ let currentLanguage = "en";
 
 // Функции для авторизации
 function showModal() {
-  document.getElementById("auth-modal").classList.remove("hidden");
-  document.getElementById("modal-overlay").classList.remove("hidden");
+  document.getElementById("auth-modal").classList.add("active");
+  document.getElementById("modal-overlay").classList.add("active");
 }
 
 function hideModal() {
-  document.getElementById("auth-modal").classList.add("hidden");
-  document.getElementById("modal-overlay").classList.add("hidden");
+  document.getElementById("auth-modal").classList.remove("active");
+  document.getElementById("modal-overlay").classList.remove("active");
 }
-document.getElementById("modal-overlay").addEventListener("click", hideModal);
 
 // Подключение Fantom Wallet (пример)
 async function connectFantom() {
   if (window.fantom) {
-    const accounts = await window.fantom.enable();
-    alert(`Connected: ${accounts[0]}`);
-    hideModal();
+    try {
+      const accounts = await window.fantom.enable();
+      alert(`Connected: ${accounts[0]}`);
+      hideModal();
+    } catch (error) {
+      alert("Error connecting to Fantom Wallet.");
+    }
   } else {
     alert("Fantom Wallet не обнаружен. Установите его!");
   }
 }
 
+// Переключение языка
 function toggleLanguage() {
   currentLanguage = currentLanguage === "en" ? "ru" : "en";
   
-  // Обновление модального окна
-  document.getElementById("auth-title").innerText = translations[currentLanguage]["auth-title"];
-  document.querySelector(".auth-wallet-button").textContent = translations[currentLanguage]["connect-fantom"];
-  
-  // Обновление флага
-  document.getElementById("language-flag").src = 
-    currentLanguage === "en" 
-      ? "img/usa-flag.svg" 
-      : "img/russia-flag.svg";
-
-  // Обновление всех текстовых элементов
+  // Обновление текстов
   Object.keys(translations[currentLanguage]).forEach(key => {
     const element = document.getElementById(key);
     if (element) {
@@ -181,38 +176,24 @@ function toggleLanguage() {
     }
   });
 
-  // Обновление списков
-  document.getElementById("why-list").innerHTML = 
-    translations[currentLanguage]["why-list"]
+  // Обновление списка "Why Us"
+  const whyList = document.getElementById("why-list");
+  if (whyList) {
+    whyList.innerHTML = translations[currentLanguage]["why-list"]
       .map(item => `<li>${item}</li>`)
       .join("");
-
-  const useCaseElements = document.querySelectorAll('.use-case-card h3, .use-case-card p');
-  const useCaseItems = translations[currentLanguage]["use-cases-items"];
-  useCaseElements.forEach((el, index) => {
-    el.textContent = useCaseItems[index];
-  });
-
-  const listingElements = document.querySelectorAll('.exchange-card p');
-  const listingItems = translations[currentLanguage]["listings-items"];
-  listingElements.forEach((el, index) => {
-    el.textContent = listingItems[index];
-  });
-
-  const roadmapItems = document.querySelectorAll('.roadmap-item p');
-  roadmapItems.forEach((el, index) => {
-    el.textContent = translations[currentLanguage]["roadmap-items"][index];
-  });
+  }
 
   // Обновление счетчика посещений
   const visits = localStorage.getItem('visits') || 0;
-  const counterText = translations[currentLanguage]["visit-counter"].replace("{count}", visits);
-  document.getElementById("visit-counter").textContent = counterText;
-}
+  document.getElementById("visit-counter").textContent = 
+    translations[currentLanguage]["visit-counter"].replace("{count}", visits);
 
-function toggleMenu() {
-  const navbar = document.getElementById("navbar");
-  navbar.classList.toggle("active");
+  // Обновление флага
+  document.getElementById("language-flag").src = 
+    currentLanguage === "en" 
+      ? "img/usa-flag.svg" 
+      : "img/russia-flag.svg";
 }
 
 // Счетчик посещений
@@ -225,68 +206,20 @@ function updateVisitCounter() {
 }
 updateVisitCounter();
 
-// Авторизация и квесты
-let loggedInUser = null;
-const adminPassword = "web3bank2025"; // Пароль админки
-const quests = localStorage.getItem("quests") ? JSON.parse(localStorage.getItem("quests")) : [];
-
-function login() {
-  const wallet = document.getElementById("wallet-address").value;
-  if (!wallet) return alert("Enter wallet address!");
-  loggedInUser = { wallet: wallet, tasks: [] };
-  updateUserInfo();
-  hideModal();
+// Мобильное меню
+function toggleMenu() {
+  const navbar = document.getElementById("navbar");
+  navbar.classList.toggle("active");
 }
 
-function updateUserInfo() {
-  const userCard = document.querySelector(".user-card");
-  if (userCard) {
-    userCard.classList.remove("hidden");
-    document.getElementById("user-wallet").textContent = loggedInUser.wallet;
-    document.getElementById("tasks-completed").textContent = loggedInUser.tasks.length;
-  }
-}
-
-// Админка
-function adminLogin() {
-  const pass = document.getElementById("admin-pass").value;
-  if (pass === adminPassword) {
-    document.getElementById("admin-panel").classList.remove("hidden");
-    document.getElementById("admin-pass").classList.add("hidden");
-  }
-}
-
-function logoutAdmin() {
-  document.getElementById("admin-panel").classList.add("hidden");
-  document.getElementById("admin-pass").classList.remove("hidden");
-}
-
-function addQuest() {
-  const title = document.getElementById("new-quest-title").value;
-  const points = document.getElementById("new-quest-points").value;
-  if (!title || !points) return alert("Fill all fields!");
-  quests.push({ title, points });
-  localStorage.setItem("quests", JSON.stringify(quests));
-  alert("Quest added!");
-}
-
-function loadQuests() {
-  const questsList = document.getElementById("quests-list");
-  quests.forEach(quest => {
-    const item = `
-      <details>
-        <summary>${quest.title}</summary>
-        <p>Points: ${quest.points}</p>
-        <button onclick="completeQuest('${quest.title}')">Complete</button>
-      </details>
-    `;
-    questsList.innerHTML += item;
+// Закрытие мобильного меню при клике на ссылку
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      document.getElementById("navbar").classList.remove("active");
+    }
   });
-}
-loadQuests();
+});
 
-function completeQuest(title) {
-  if (!loggedInUser) return alert("Authorize first!");
-  loggedInUser.tasks.push(title);
-  updateUserInfo();
-}
+// Закрытие модального окна при клике на затемнение
+document.getElementById("modal-overlay").addEventListener("click", hideModal);
