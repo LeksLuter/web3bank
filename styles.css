@@ -219,19 +219,20 @@ position: static;
 
 /* Модальное окно */
 .modal {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2001;
+}
+
+.modal.hidden {
   display: none;
 }
 
-.modal.active {
-  display: flex;
-}
-
 .modal-overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -239,11 +240,10 @@ position: static;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 2000;
-  display: none;
 }
 
-.modal-overlay.active {
-  display: block;
+.modal-overlay.hidden {
+  display: none;
 }
 
 .modal-content {
