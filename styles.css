@@ -446,6 +446,63 @@ footer p {
   display: none !important;
 }
 
+/* Для мобильных: показываем гамбургер */
+.mobile-menu-toggle {
+  display: block !important; /* Важно: переопределяем display */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 3px;
+  background: #ffffff;
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  width: 30px;
+  height: 3px;
+  background: #ffffff;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.menu-icon::before {
+  top: -8px;
+}
+
+.menu-icon::after {
+  top: 8px;
+}
+
+/* При активном меню */
+.navbar.active + .mobile-menu-toggle .menu-icon {
+  background: transparent;
+}
+
+.navbar.active + .mobile-menu-toggle .menu-icon::before {
+  transform: rotate(45deg) translateY(8px);
+  background: #ff7f50;
+}
+
+.navbar.active + .mobile-menu-toggle .menu-icon::after {
+  transform: rotate(-45deg) translateY(-8px);
+  background: #ff7f50;
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none !important; /* Скрываем на ПК */
+  }
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
   header {
