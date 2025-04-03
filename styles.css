@@ -38,33 +38,33 @@ header {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #ff7f50;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ff7f50;
+  margin: 10px auto 0;
 }
 
 .card {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 12px;
   padding: 30px;
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
-/* Стили для кнопок */
-.cta-button {
-  background: linear-gradient(135deg, #ff7f50, #ff6347);
-  border: none;
-  color: #ffffff;
-  padding: 12px 25px;
-  border-radius: 50px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.cta-button:hover {
-  transform: scale(1.05);
-}
-
-/* Меню навигации */
+/* Навигационное меню */
 .navbar {
   display: flex;
   justify-content: center;
@@ -75,14 +75,19 @@ header {
   width: 100%;
   z-index: 1000;
   padding: 10px 0;
+  transition: transform 0.3s ease;
+}
+
+.navbar.active {
+  transform: translateY(0%);
 }
 
 .nav-links {
   list-style: none;
-  display: flex;
-  gap: 20px;
   margin: 0;
   padding: 0;
+  display: flex;
+  gap: 20px;
 }
 
 .nav-links a {
@@ -111,6 +116,7 @@ header {
   height: 3px;
   background: #ffffff;
   position: relative;
+  transition: all 0.3s ease;
 }
 
 .menu-icon::before,
@@ -151,6 +157,7 @@ header {
     display: none;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
   }
 
   .navbar.active {
@@ -163,7 +170,7 @@ header {
 
   .nav-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
 }
 
@@ -206,29 +213,16 @@ header {
 
 /* Модальное окно */
 .modal {
-  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2001;
+  display: none;
 }
 
 .modal.active {
   display: flex;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 2000;
 }
 
 .modal-content {
@@ -239,6 +233,21 @@ header {
   max-width: 400px;
   text-align: center;
   border: 2px solid #ff7f50;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: none;
+}
+
+.modal-overlay.active {
+  display: block;
 }
 
 .close-button {
@@ -270,18 +279,51 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.wallet-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+/* Секция Listings */
+.exchanges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Секция партнеров */
+.exchange-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.exchange-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.exchange-logo {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.exchange-text {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+/* Секция Partners */
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .partner-card {
@@ -289,26 +331,20 @@ header {
   border-radius: 12px;
   padding: 20px;
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .partner-logo {
-  width: 100px;
-  height: auto;
-  margin: 0 auto 10px;
-}
-
-/* Секция Roadmap */
-.roadmap {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.roadmap-item {
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 /* Секция Use Cases */
@@ -325,11 +361,29 @@ header {
   text-align: center;
 }
 
+/* Секция Roadmap */
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.roadmap-item {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
 /* Футер */
 footer {
   background: rgba(0, 0, 0, 0.8);
   padding: 20px;
   text-align: center;
+}
+
+footer p {
+  margin: 0;
 }
 
 .social-icons a {
@@ -341,4 +395,28 @@ footer {
 
 .analytics-section {
   margin-top: 20px;
+}
+
+/* Ошибки в исходном коде */
+.hidden {
+  display: none !important;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+  }
+  
+  .exchange-logo {
+    height: 120px;
+  }
+  
+  .partner-logo {
+    height: 80px;
+  }
+  
+  .section h2 {
+    font-size: 2rem;
+  }
 }
