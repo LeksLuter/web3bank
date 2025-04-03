@@ -167,7 +167,7 @@ header {
   }
 }
 
-/* Языковая кнопка */
+/* Кнопка флага */
 .language-switcher {
   position: fixed;
   top: 20px;
@@ -193,7 +193,7 @@ header {
 .auth-button-container {
   position: fixed;
   top: 20px;
-  right: 90px; /* Исправлено положение (было 90px) */
+  right: 70px; /* Исправлено положение (было 90px) */
   z-index: 1001;
 }
 
@@ -536,10 +536,6 @@ footer p {
 @media (max-width: 768px) {
   .auth-button-container {
     right: 20px;
-  }
-
-  .language-switcher {
-    right: 60px;
   }
 }
 @media (max-width: 480px) {
