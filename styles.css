@@ -579,8 +579,8 @@ button {
 /* Стили для кнопки входа */
 .auth-button-container {
   position: fixed;
-  top: 20px;
-  right: 90px; /* Позиция справа от флага */
+  top: 20px; /* Уменьшен отступ сверху */
+  right: 90px; /* Расстояние от правого края */
   z-index: 1001;
 }
 
@@ -602,14 +602,14 @@ button {
 /* Стили для модального окна */
 .modal {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center; /* Центрирование по вертикали */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2000;
+  z-index: 2001;
 }
 
 .modal-overlay {
@@ -626,8 +626,10 @@ button {
   background: rgba(0, 0, 0, 0.8);
   padding: 30px;
   border-radius: 12px;
-  width: 80%;
-  max-width: 400px;
+  width: 80%; /* Ширина модального окна */
+  max-width: 400px; /* Максимальная ширина */
+  text-align: center; /* Выравнивание текста по центру */
+  border: 2px solid #ff7f50; /* Добавлена рамка для видимости границ */
 }
 
 .close-button {
@@ -640,13 +642,17 @@ button {
 }
 
 .auth-wallet-button {
+  display: flex; /* Кнопка выровнена по центру */
+  align-items: center; /* Иконка и текст в ряд */
+  justify-content: center;
   background: #3c3c3c;
   color: #ff7f50;
   padding: 15px 30px;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
-  margin: 20px 0;
+  margin-top: 20px; /* Отступ от заголовка */
+  cursor: pointer;
   transition: transform 0.2s ease;
 }
 
@@ -658,5 +664,5 @@ button {
 .wallet-icon {
   width: 24px;
   height: 24px;
-  margin-right: 10px;
+  margin-right: 10px; /* Отступ между иконкой и текстом */
 }
