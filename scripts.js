@@ -140,6 +140,9 @@ let currentLanguage = "en";
 // Переключение языка
 function toggleLanguage() {
   currentLanguage = currentLanguage === "en" ? "ru" : "en";
+
+  document.querySelector(".auth-button").textContent = 
+  translations[currentLanguage]["auth-title"];
   
   // Обновление флага
   const flag = document.getElementById("language-flag");
@@ -296,5 +299,6 @@ function updateVisitCounter() {
   localStorage.setItem("visits", visits);
   const counterText = translations[currentLanguage]["visit-counter"].replace("{count}", visits);
   document.getElementById("visit-counter").textContent = counterText;
+  
 }
 updateVisitCounter();
