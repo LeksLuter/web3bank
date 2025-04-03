@@ -171,7 +171,7 @@ header {
 .language-switcher {
   position: fixed;
   top: 20px;
-  right: 70px; /* Исправлено положение (было 90px) */
+  right: 20px; /* Исправлено положение (было 90px) */
   z-index: 1001;
   cursor: pointer;
 }
@@ -193,7 +193,7 @@ header {
 .auth-button-container {
   position: fixed;
   top: 20px;
-  right: 20px; /* Исправлено положение (было 90px) */
+  right: 90px; /* Исправлено положение (было 90px) */
   z-index: 1001;
 }
 
