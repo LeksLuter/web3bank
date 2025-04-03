@@ -11,7 +11,7 @@ body {
 
 header {
   background: rgba(0, 0, 0, 0.6);
-  padding: 20px; /* Уменьшен отступ */
+  padding: 20px;
   text-align: center;
   position: relative;
 }
@@ -184,8 +184,8 @@ header {
 /* Кнопка входа */
 .auth-button-container {
   position: fixed;
-  top: 20px; /* Отступ сверху */
-  right: 20px; /* Отступ справа */
+  top: 20px;
+  right: 20px; /* Исправлено положение */
   z-index: 1001;
 }
 
@@ -207,8 +207,8 @@ header {
 /* Модальное окно */
 .modal {
   display: flex;
-  justify-content: center; /* Горизонтальное центрирование */
-  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center; /* Центрирование по вертикали */
   position: fixed;
   top: 0;
   left: 0;
@@ -219,8 +219,8 @@ header {
 
 .modal-content {
   background: rgba(0, 0, 0, 0.8);
-  border-radius: 12px;
   padding: 30px;
+  border-radius: 12px;
   width: 80%; /* Ширина контента */
   max-width: 400px; /* Максимальная ширина */
   text-align: center;
