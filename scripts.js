@@ -205,15 +205,20 @@ function toggleMenu() {
 // Авторизация
 let loggedInUser = null;
 
+// Открытие модального окна
 function showModal() {
-  document.getElementById("auth-modal").classList.remove("hidden");
-  document.getElementById("modal-overlay").classList.remove("hidden");
+  document.getElementById("auth-modal").classList.add("active");
+  document.getElementById("modal-overlay").classList.add("active");
 }
 
+// Закрытие модального окна
 function hideModal() {
-  document.getElementById("auth-modal").classList.add("hidden");
-  document.getElementById("modal-overlay").classList.add("hidden");
+  document.getElementById("auth-modal").classList.remove("active");
+  document.getElementById("modal-overlay").classList.remove("active");
 }
+
+// Закрытие при клике на оверлей
+document.getElementById("modal-overlay").addEventListener("click", hideModal);
 
 async function connectFantom() {
   if (window.fantom) {
