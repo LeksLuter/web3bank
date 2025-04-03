@@ -62,8 +62,7 @@ const translations = {
     "how-title": "How It Works",
     "how-text": "1. Create your Web3 wallet.<br>2. Mint or trade WTB meme tokens.<br>3. Vote on the best memes to govern the platform.<br>4. Laugh your way to the top of the leaderboard!",
     "visit-counter": "Visits: {count}",
-    "analytics-link": "View Analytics"
-
+    "analytics-link": "View Analytics",
     "auth-title": "Sign In",
     "connect-fantom": "Connect with Fantom Wallet"
   },
@@ -130,11 +129,13 @@ const translations = {
     "how-title": "Как это работает",
     "how-text": "1. Создайте свой Web3 кошелек.<br>2. Чеканьте или торгуйте токенами WTB.<br>3. Голосуйте за лучшие мемы для управления платформой.<br>4. Смейтесь до вершины лидерборда!",
     "visit-counter": "Посещения: {count}",
-    "analytics-link": "Посмотреть аналитику"
+    "analytics-link": "Посмотреть аналитику",
+    "auth-title": "Войти",
+    "connect-fantom": "Подключить Fantom Wallet"
   }
-  "auth-title": "Войти",
-  "connect-fantom": "Подключить Fantom Wallet"
 };
+
+let currentLanguage = "en";
 
 // Функции для авторизации
 function showModal() {
@@ -158,19 +159,10 @@ async function connectFantom() {
   }
 }
 
-// Обновление перевода для новой кнопки
-translations.en["auth-title"] = "Sign In";
-translations.en["connect-fantom"] = "Connect with Fantom Wallet";
-
-translations.ru["auth-title"] = "Войти";
-translations.ru["connect-fantom"] = "Подключить Fantom Wallet";
-
-let currentLanguage = "en";
-
 function toggleLanguage() {
   currentLanguage = currentLanguage === "en" ? "ru" : "en";
-
-    // Обновление модального окна
+  
+  // Обновление модального окна
   document.getElementById("auth-title").innerText = translations[currentLanguage]["auth-title"];
   document.querySelector(".auth-wallet-button").textContent = translations[currentLanguage]["connect-fantom"];
   
@@ -220,15 +212,6 @@ function toggleLanguage() {
 function toggleMenu() {
   const navbar = document.getElementById("navbar");
   navbar.classList.toggle("active");
-  
-  // Закрытие меню при клике на ссылку (мобильная версия)
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        navbar.classList.remove("active");
-      }
-    });
-  });
 }
 
 // Счетчик посещений
@@ -236,37 +219,31 @@ function updateVisitCounter() {
   let visits = localStorage.getItem('visits');
   visits = visits ? parseInt(visits) + 1 : 1;
   localStorage.setItem('visits', visits);
-  document.getElementById("visit-counter").textContent = 
-    currentLanguage === "en" 
-      ? `Visits: ${visits}` 
-      : `Посещения: ${visits}`;
+  const counterText = translations[currentLanguage]["visit-counter"].replace("{count}", visits);
+  document.getElementById("visit-counter").textContent = counterText;
 }
 updateVisitCounter();
 
+// Авторизация и квесты
 let loggedInUser = null;
 const adminPassword = "web3bank2025"; // Пароль админки
 const quests = localStorage.getItem("quests") ? JSON.parse(localStorage.getItem("quests")) : [];
 
-// Авторизация через кошелек
-function showLoginForm() {
-  document.getElementById("login-modal").classList.remove("hidden");
-}
-
-async function login() {
+function login() {
   const wallet = document.getElementById("wallet-address").value;
   if (!wallet) return alert("Enter wallet address!");
-  
-  // Подключение кошелька (пример)
   loggedInUser = { wallet: wallet, tasks: [] };
   updateUserInfo();
-  document.getElementById("login-modal").classList.add("hidden");
+  hideModal();
 }
 
 function updateUserInfo() {
   const userCard = document.querySelector(".user-card");
-  userCard.classList.remove("hidden");
-  document.getElementById("user-wallet").textContent = loggedInUser.wallet;
-  document.getElementById("tasks-completed").textContent = loggedInUser.tasks.length;
+  if (userCard) {
+    userCard.classList.remove("hidden");
+    document.getElementById("user-wallet").textContent = loggedInUser.wallet;
+    document.getElementById("tasks-completed").textContent = loggedInUser.tasks.length;
+  }
 }
 
 // Админка
@@ -287,13 +264,11 @@ function addQuest() {
   const title = document.getElementById("new-quest-title").value;
   const points = document.getElementById("new-quest-points").value;
   if (!title || !points) return alert("Fill all fields!");
-
   quests.push({ title, points });
   localStorage.setItem("quests", JSON.stringify(quests));
   alert("Quest added!");
 }
 
-// Отображение заданий на Quest Room
 function loadQuests() {
   const questsList = document.getElementById("quests-list");
   quests.forEach(quest => {
