@@ -164,15 +164,7 @@ header {
 .auth-button-container {
   position: fixed;
   top: 20px;
-  right: 90px; 
-  z-index: 1001;
-}
-
-/* Языковая кнопка */
-.language-switcher {
-  position: fixed;
-  top: 20px;
-  right: 20px; /* Флаг правее */
+  right: 20px;
   z-index: 1001;
 }
 
