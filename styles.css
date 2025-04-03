@@ -6,7 +6,7 @@ body {
   background-size: cover;
   color: #ffffff;
   line-height: 1.6;
-  padding-top: 80px;
+  padding-top: 100px;
 }
 
 /* Исправлено: Убрано дублирование header стилей */
@@ -73,17 +73,20 @@ header {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Навигация */
+/* Фиксированная навигация */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 10px 0;
-  transform: translateY(-100%);
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(0);
   transition: transform 0.3s ease;
-  z-index: 999;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
 }
 
 .navbar.active {
@@ -157,9 +160,9 @@ header {
 /* Панель управления в хедере */
 .header-controls {
   position: fixed;
+  z-index: 1001;
   top: 20px;
   right: 20px;
-  z-index: 1001;
   display: flex;
   gap: 15px;
   align-items: center;
@@ -279,7 +282,7 @@ footer {
 /* Адаптивность */
 @media (max-width: 768px) {
   body {
-    padding-top: 60px;
+    padding-top: 80px;
   }
 
   .section h2 {
