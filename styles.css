@@ -164,7 +164,7 @@ header {
 .auth-button-container {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 90px; 
   z-index: 1001;
 }
 
