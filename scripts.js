@@ -155,7 +155,7 @@ async function connectFantom() {
     alert(`Connected: ${accounts[0]}`);
     hideModal();
   } else {
-    alert("Fantom Wallet not detected. Install it first!");
+    alert("Fantom Wallet не обнаружен. Установите его!");
   }
 }
 
@@ -205,8 +205,8 @@ function toggleLanguage() {
 
   // Обновление счетчика посещений
   const visits = localStorage.getItem('visits') || 0;
-  document.getElementById("visit-counter").textContent = 
-    translations[currentLanguage]["visit-counter"].replace("{count}", visits);
+  const counterText = translations[currentLanguage]["visit-counter"].replace("{count}", visits);
+  document.getElementById("visit-counter").textContent = counterText;
 }
 
 function toggleMenu() {
