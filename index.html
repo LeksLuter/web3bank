@@ -8,10 +8,8 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HX1WK9Y6S1"></script>
-  
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -21,17 +19,14 @@
 </head>
 <body>
   <header>
-    
     <!-- Гамбургер иконка -->
     <div class="mobile-menu-toggle" onclick="toggleMenu()">
       <div class="menu-icon"></div>
     </div>
-    
-      <!-- Кнопка входа -->
-  <div class="auth-button-container">
-    <button onclick="showModal()" class="auth-button">Log In</button>
-  </div>
-    
+    <!-- Кнопка входа -->
+    <div class="auth-button-container">
+      <button onclick="showModal()" class="auth-button">Log In</button>
+    </div>
     <!-- Кнопка переключения языка -->
     <div class="language-switcher">
       <img 
@@ -46,22 +41,22 @@
     <h1 id="header-title">Web3 Bank</h1>
     <p id="header-subtitle">Your Gateway to the Funniest Decentralized Future!</p>
   </header>
-  
-<!-- Модальное окно для авторизации -->
-<div id="auth-modal" class="modal hidden">
-  <div class="modal-content">
-    <span onclick="hideModal()" class="close-button">&times;</span>
-    <h3 id="auth-title">Sign In</h3>
-    <button onclick="connectFantom()" class="auth-wallet-button">
-      <img src="img/fantom-logo.png" alt="Fantom Wallet" class="wallet-icon">
-      Connect with Fantom Wallet
-    </button>
-  </div>
-</div>
 
-<!-- затемнение за модальным окном -->
-<div id="modal-overlay" class="modal-overlay hidden"></div>
-  
+  <!-- Модальное окно для авторизации -->
+  <div id="auth-modal" class="modal hidden">
+    <div class="modal-content">
+      <span onclick="hideModal()" class="close-button">&times;</span>
+      <h3 id="auth-title">Sign In</h3>
+      <button onclick="connectFantom()" class="auth-wallet-button">
+        <img src="img/fantom-logo.png" alt="Fantom Wallet" class="wallet-icon">
+        <span id="connect-text">Connect with Fantom Wallet</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- затемнение за модальным окном -->
+  <div id="modal-overlay" class="modal-overlay hidden"></div>
+
   <!-- Навигационное меню -->
   <nav class="navbar" id="navbar">
     <ul class="nav-links">
@@ -74,6 +69,7 @@
       <li><a href="#partners-section" id="nav-partners">Partners</a></li>
     </ul>
   </nav>
+
   <div class="container">
     <!-- Секция Welcome (обновлен текст) -->
     <div class="section" id="welcome-section">
@@ -82,6 +78,7 @@
         <p id="welcome-text">🔥 Welcome to Web3 Bank — Where Memes Meet Money! Say goodbye to boring finance! Join a decentralized community where every meme you create or share can earn you WTB tokens. Powered by blockchain, we turn laughter into real value. Start your journey today — earn, vote, and build the future of meme-driven finance with us!</p>
       </div>
     </div>
+
     <!-- Секция Why Us (обновлены пункты) -->
     <div class="section" id="why-section">
       <h2 id="why-title">Why Web3 Bank?</h2>
@@ -96,6 +93,7 @@
         <a href="#listings-section" class="cta-button">Start Earning Now</a>
       </div>
     </div>
+
     <!-- Секция Tokenomics (WTB вместо W3B) -->
     <div class="section" id="tokenomics-section">
       <h2 id="tokenomics-title">Tokenomics</h2>
@@ -108,6 +106,7 @@
         <p id="tokenomics-text">Our tokenomics are designed to ensure fairness, sustainability, and long-term growth for our community. Join us and become part of the decentralized future!</p>
       </div>
     </div>
+
     <!-- Секция Use Cases (WTB вместо W3B) -->
     <div class="section" id="use-cases-section">
       <h2 id="use-cases-title">Token Use Cases</h2>
@@ -138,6 +137,7 @@
         </div>
       </div>
     </div>
+
     <!-- Секция Listings (обновлены ссылки) -->
     <div class="section" id="listings-section">
       <h2 id="listings-title">Token Listings</h2>
@@ -164,22 +164,26 @@
         </a>
       </div>
     </div>
+
     <!-- Секция Partners (заглушка) -->
     <div class="section" id="partners-section">
       <h2 id="partners-title">Our Partners</h2>
       <div class="partners-grid">
         <a href="https://zealy.io/cw/web3bank/questboard" target="_blank" class="partner-card">
-          <img src="img/zealy.jpg" alt="zealy.io" class="partner-logo">
+          <img src="img/zealy.jpg" alt="Zealy.io" class="partner-logo">
           <p>Zealy.io</p>
         </a>
         <a href="#" target="_blank" class="partner-card">
-          <img src="img/500.png" alt="Partner 2" class="partner-logo">
+          <img src="img/soon.png" alt="Partner 2" class="partner-logo">
+          <p>Coming Soon</p>
         </a>
         <a href="#" target="_blank" class="partner-card">
           <img src="img/soon.png" alt="Partner 3" class="partner-logo">
+          <p>Coming Soon</p>
         </a>
       </div>
     </div>
+
     <!-- Секция Roadmap -->
     <div class="section" id="roadmap-section">
       <h2 id="roadmap-title">Roadmap</h2>
@@ -210,6 +214,7 @@
         </div>
       </div>
     </div>
+
     <!-- Секция How It Works -->
     <div class="section" id="how-section">
       <h2 id="how-title">How It Works</h2>
@@ -221,6 +226,7 @@
       </div>
     </div>
   </div>
+
   <footer>
     <p id="footer-rights">&copy; 2025 Web3 Bank. All rights reserved.</p>
     <p>
@@ -236,6 +242,7 @@
       <a href="https://analytics.google.com/" target="_blank" id="analytics-link">View Analytics</a>
     </div>
   </footer>
+
   <script src="scripts.js"></script>
 </body>
 </html>
