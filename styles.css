@@ -485,3 +485,21 @@ footer p {
     right: 60px;
   }
 }
+@media (max-width: 480px) {
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section p {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.8rem;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem;
+  }
+}
