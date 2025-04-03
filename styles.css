@@ -537,6 +537,9 @@ footer p {
   .auth-button-container {
     right: 20px;
   }
+    .language-switcher {
+    right: 60px;
+  }
 }
 @media (max-width: 480px) {
   .section h2 {
