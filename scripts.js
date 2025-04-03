@@ -63,6 +63,9 @@ const translations = {
     "how-text": "1. Create your Web3 wallet.<br>2. Mint or trade WTB meme tokens.<br>3. Vote on the best memes to govern the platform.<br>4. Laugh your way to the top of the leaderboard!",
     "visit-counter": "Visits: {count}",
     "analytics-link": "View Analytics"
+
+    "auth-title": "Sign In",
+    "connect-fantom": "Connect with Fantom Wallet"
   },
   ru: {
     "header-title": "Web3 Банк",
@@ -129,12 +132,47 @@ const translations = {
     "visit-counter": "Посещения: {count}",
     "analytics-link": "Посмотреть аналитику"
   }
+  "auth-title": "Войти",
+  "connect-fantom": "Подключить Fantom Wallet"
 };
+
+// Функции для авторизации
+function showModal() {
+  document.getElementById("auth-modal").classList.remove("hidden");
+  document.getElementById("modal-overlay").classList.remove("hidden");
+}
+
+function hideModal() {
+  document.getElementById("auth-modal").classList.add("hidden");
+  document.getElementById("modal-overlay").classList.add("hidden");
+}
+
+// Подключение Fantom Wallet (пример)
+async function connectFantom() {
+  if (window.fantom) {
+    const accounts = await window.fantom.enable();
+    alert(`Connected: ${accounts[0]}`);
+    hideModal();
+  } else {
+    alert("Fantom Wallet not detected. Install it first!");
+  }
+}
+
+// Обновление перевода для новой кнопки
+translations.en["auth-title"] = "Sign In";
+translations.en["connect-fantom"] = "Connect with Fantom Wallet";
+
+translations.ru["auth-title"] = "Войти";
+translations.ru["connect-fantom"] = "Подключить Fantom Wallet";
 
 let currentLanguage = "en";
 
 function toggleLanguage() {
   currentLanguage = currentLanguage === "en" ? "ru" : "en";
+
+    // Обновление модального окна
+  document.getElementById("auth-title").innerText = translations[currentLanguage]["auth-title"];
+  document.querySelector(".auth-wallet-button").textContent = translations[currentLanguage]["connect-fantom"];
   
   // Обновление флага
   document.getElementById("language-flag").src = 
@@ -204,7 +242,7 @@ function updateVisitCounter() {
       : `Посещения: ${visits}`;
 }
 updateVisitCounter();
-// Добавьте в конец файла
+
 let loggedInUser = null;
 const adminPassword = "web3bank2025"; // Пароль админки
 const quests = localStorage.getItem("quests") ? JSON.parse(localStorage.getItem("quests")) : [];
