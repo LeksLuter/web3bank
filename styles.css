@@ -184,9 +184,8 @@ header {
 /* Кнопка входа */
 .auth-button-container {
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 20px; /* Отступ сверху */
+  right: 20px; /* Отступ справа */
   z-index: 1001;
 }
 
