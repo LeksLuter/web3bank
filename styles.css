@@ -168,6 +168,14 @@ header {
   z-index: 1001;
 }
 
+/* Языковая кнопка */
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px; /* Флаг правее */
+  z-index: 1001;
+}
+
 .auth-button {
   background: linear-gradient(135deg, #ff7f50, #ff6347);
   border: none;
