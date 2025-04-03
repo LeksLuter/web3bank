@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <title>Web3 Bank - Your Decentralized Crypto-Mem Adventure</title>
+  <link rel="icon" href="https://i.imgur.com/MPGaJtZ.png" type="image/png">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -12,12 +13,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HX1WK9Y6S1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-HX1WK9Y6S1');
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/fantom@latest/dist/fantom.js"></script>
 </head>
 <body>
   <header>
@@ -44,18 +43,17 @@
     <p id="header-subtitle">Your Gateway to the Funniest Decentralized Future!</p>
   </header>
 
-<!-- Модальное окно -->
-<div id="auth-modal" class="modal hidden">
-  <div class="modal-content">
-    <span onclick="hideModal()" class="close-button">&times;</span>
-    <h3 id="auth-title">Sign In</h3>
-    <button onclick="connectFantom()" class="auth-wallet-button">
-      <img src="img/fantom-logo.png" alt="Fantom Wallet" class="wallet-icon">
-      <span id="connect-text">Connect with Fantom Wallet</span>
-    </button>
+  <!-- Модальное окно для авторизации -->
+  <div id="auth-modal" class="modal hidden">
+    <div class="modal-content">
+      <span onclick="hideModal()" class="close-button">&times;</span>
+      <h3 id="auth-title">Sign In</h3>
+      <button onclick="connectFantom()" class="auth-wallet-button">
+        <img src="img/fantom-logo.png" alt="Fantom Wallet" class="wallet-icon">
+        <span id="connect-text">Connect with Fantom Wallet</span>
+      </button>
+    </div>
   </div>
-</div>
-
 
   <!-- затемнение за модальным окном -->
   <div id="modal-overlay" class="modal-overlay hidden"></div>
@@ -74,15 +72,17 @@
   </nav>
 
   <div class="container">
-    <!-- Секция Welcome (обновлен текст) -->
+    <!-- Секция Welcome -->
     <div class="section" id="welcome-section">
       <h2 id="welcome-title">Welcome to Web3 Bank</h2>
       <div class="card">
-        <p id="welcome-text">🔥 Welcome to Web3 Bank — Where Memes Meet Money! Say goodbye to boring finance! Join a decentralized community where every meme you create or share can earn you WTB tokens. Powered by blockchain, we turn laughter into real value. Start your journey today — earn, vote, and build the future of meme-driven finance with us!</p>
+        <p id="welcome-text">
+          🔥 Welcome to Web3 Bank — Where Memes Meet Money! Say goodbye to boring finance! Join a decentralized community where every meme you create or share can earn you WTB tokens. Powered by blockchain, we turn laughter into real value. Start your journey today — earn, vote, and build the future of meme-driven finance with us!
+        </p>
       </div>
     </div>
 
-    <!-- Секция Why Us (обновлены пункты) -->
+    <!-- Секция Why Us -->
     <div class="section" id="why-section">
       <h2 id="why-title">Why Web3 Bank?</h2>
       <div class="card">
@@ -97,20 +97,22 @@
       </div>
     </div>
 
-    <!-- Секция Tokenomics (WTB вместо W3B) -->
+    <!-- Секция Tokenomics -->
     <div class="section" id="tokenomics-section">
       <h2 id="tokenomics-title">Tokenomics</h2>
       <div class="card">
         <p><strong>Token Name:</strong> WTB</p>
         <p><strong>Total Supply:</strong> 1,000,000,000 WTB</p>
-        <p><strong>Contract Address:</strong> 
+        <p><strong>Contract Address:</strong>
           <a href="https://solscan.io/token/EKpmvgCUUyg9WYCS8xK92wRGNEw6uy5EurWrxkd6pump" target="_blank" style="color: #4ade80;">View Contract</a>
         </p>
-        <p id="tokenomics-text">Our tokenomics are designed to ensure fairness, sustainability, and long-term growth for our community. Join us and become part of the decentralized future!</p>
+        <p id="tokenomics-text">
+          Our tokenomics are designed to ensure fairness, sustainability, and long-term growth for our community. Join us and become part of the decentralized future!
+        </p>
       </div>
     </div>
 
-    <!-- Секция Use Cases (WTB вместо W3B) -->
+    <!-- Секция Use Cases -->
     <div class="section" id="use-cases-section">
       <h2 id="use-cases-title">Token Use Cases</h2>
       <div class="use-cases-grid">
@@ -141,7 +143,7 @@
       </div>
     </div>
 
-    <!-- Секция Listings (обновлены ссылки) -->
+    <!-- Секция Listings -->
     <div class="section" id="listings-section">
       <h2 id="listings-title">Token Listings</h2>
       <div class="exchanges-grid">
@@ -155,7 +157,7 @@
         </a>
         <a href="https://www.dextools.io/app/ru/solana/pair-explorer/EKpmvgCUUyg9WYCS8xK92wRGNEw6uy5EurWrxkd6pump?t=1742136328745" target="_blank" class="exchange-card">
           <img src="img/dextools.png" alt="DexTools" class="exchange-logo">
-          <p>Check WTB metrics on DexTools</p>
+          <p>Check WTB price on DexTools</p>
         </a>
         <a href="#" target="_blank" class="exchange-card">
           <img src="img/soon.png" alt="Coming Soon" class="exchange-logo">
@@ -168,7 +170,7 @@
       </div>
     </div>
 
-    <!-- Секция Partners (заглушка) -->
+    <!-- Секция Partners -->
     <div class="section" id="partners-section">
       <h2 id="partners-title">Our Partners</h2>
       <div class="partners-grid">
@@ -222,27 +224,28 @@
     <div class="section" id="how-section">
       <h2 id="how-title">How It Works</h2>
       <div class="card">
-        <p id="how-text">1. Create your Web3 wallet.<br>
-           2. Mint or trade meme tokens.<br>
-           3. Vote on the best memes to govern the platform.<br>
-           4. Laugh your way to the top of the leaderboard!</p>
+        <p id="how-text">
+          1. Create your Web3 wallet.<br>
+          2. Mint or trade WTB meme tokens.<br>
+          3. Vote on the best memes to govern the platform.<br>
+          4. Laugh your way to the top of the leaderboard!
+        </p>
       </div>
     </div>
   </div>
 
   <footer>
-    <p id="footer-rights">&copy; 2025 Web3 Bank. All rights reserved.</p>
-    <p>
-      <a href="#" id="footer-terms">Terms of Service</a> | 
-      <a href="#" id="footer-privacy">Privacy Policy</a>
+    <p>&copy; 2025 Web3 Bank. All rights reserved. | 
+      <a href="#">Terms of Service</a> | 
+      <a href="#">Privacy Policy</a>
     </p>
     <div class="social-icons">
-      <a href="https://x.com/web3_bank" id="social-x">𝕏</a>
-      <a href="https://t.me/web3bank_meme" id="social-telegram">Telegram</a>
+      <a href="https://x.com/web3_bank" target="_blank">𝕏</a>
+      <a href="https://t.me/web3bank_meme" target="_blank"> Telegram</a>
     </div>
     <div class="analytics-section">
       <p id="visit-counter">Visits: 0</p>
-      <a href="https://analytics.google.com/" target="_blank" id="analytics-link">View Analytics</a>
+      <a href="https://analytics.google.com/analytics/web/" target="_blank" id="analytics-link">View Analytics</a>
     </div>
   </footer>
 
