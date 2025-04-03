@@ -44,17 +44,18 @@
     <p id="header-subtitle">Your Gateway to the Funniest Decentralized Future!</p>
   </header>
 
-  <!-- Модальное окно для авторизации -->
-  <div id="auth-modal" class="modal hidden">
-    <div class="modal-content">
-      <span onclick="hideModal()" class="close-button">&times;</span>
-      <h3 id="auth-title">Sign In</h3>
-      <button onclick="connectFantom()" class="auth-wallet-button">
-        <img src="img/fantom-logo.png" alt="Fantom Wallet" class="wallet-icon">
-        <span id="connect-text">Connect with Fantom Wallet</span>
-      </button>
-    </div>
+<!-- Модальное окно -->
+<div id="auth-modal" class="modal hidden">
+  <div class="modal-content">
+    <span onclick="hideModal()" class="close-button">&times;</span>
+    <h3 id="auth-title">Sign In</h3>
+    <button onclick="connectFantom()" class="auth-wallet-button">
+      <img src="img/fantom-logo.png" alt="Fantom Wallet" class="wallet-icon">
+      <span id="connect-text">Connect with Fantom Wallet</span>
+    </button>
   </div>
+</div>
+
 
   <!-- затемнение за модальным окном -->
   <div id="modal-overlay" class="modal-overlay hidden"></div>
