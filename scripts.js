@@ -207,14 +207,14 @@ let loggedInUser = null;
 
 // Открытие модального окна
 function showModal() {
-  document.getElementById("auth-modal").classList.add("active");
-  document.getElementById("modal-overlay").classList.add("active");
+  document.getElementById("auth-modal").classList.remove("hidden");
+  document.getElementById("modal-overlay").classList.remove("hidden");
 }
 
 // Закрытие модального окна
 function hideModal() {
-  document.getElementById("auth-modal").classList.remove("active");
-  document.getElementById("modal-overlay").classList.remove("active");
+  document.getElementById("auth-modal").classList.add("hidden");
+  document.getElementById("modal-overlay").classList.add("hidden");
 }
 
 // Закрытие при клике на оверлей
