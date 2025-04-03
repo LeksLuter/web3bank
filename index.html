@@ -1,29 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" itemscope itemtype="https://schema.org/WebPage">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Web3 Bank - Decentralized Meme Finance Platform. Earn, trade and govern with meme tokens.">
-  <meta property="og:title" content="Web3 Bank | Decentralized Meme Finance">
-  <meta property="og:image" content="https://i.imgur.com/MPGaJtZ.png">
-  <meta property="og:url" content="https://web3bank.com">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="img/logo-180x180.png">
-  <link rel="manifest" href="site.webmanifest">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-
-  <!-- Analytics -->
+  <title>Web3 Bank - Your Decentralized Crypto-Mem Adventure</title>
+  <link rel="icon" href="https://i.imgur.com/MPGaJtZ.png" type="image/png">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HX1WK9Y6S1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -32,252 +18,233 @@
     gtag('config', 'G-HX1WK9Y6S1');
   </script>
 </head>
-
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <header role="banner" itemscope itemtype="https://schema.org/WPHeader">
-    <nav aria-label="Main navigation">
-      <!-- Mobile Menu -->
-      <button 
-        class="mobile-menu-toggle" 
-        aria-expanded="false" 
-        aria-controls="navbar"
-        onclick="toggleMenu()"
+  <header>
+    <!-- Гамбургер меню -->
+    <div class="mobile-menu-toggle" onclick="toggleMenu()">
+      <div class="menu-icon"></div>
+    </div>
+    <!-- Кнопка входа -->
+    <div class="auth-button-container">
+      <button onclick="showModal()" class="auth-button">Log In</button>
+    </div>
+    <!-- Кнопка переключения языка -->
+    <div class="language-switcher">
+      <img 
+        src="img/usa-flag.svg" 
+        alt="English Flag" 
+        class="flag-icon" 
+        id="language-flag" 
+        onclick="toggleLanguage()"
       >
-        <span class="menu-icon" aria-hidden="true"></span>
-        <span class="sr-only">Menu</span>
-      </button>
-
-      <!-- Header Controls -->
-      <div class="header-controls">
-        <div class="auth-button-container">
-          <button 
-            class="auth-button" 
-            aria-label="Login"
-            onclick="showModal()"
-            data-translate="auth-title"
-          >
-            Log In
-          </button>
-        </div>
-        
-        <button 
-          class="language-switcher" 
-          aria-label="Change language"
-          onclick="toggleLanguage()"
-        >
-          <img 
-            src="img/usa-flag.svg" 
-            alt="Current language" 
-            class="flag-icon" 
-            id="language-flag" 
-            loading="lazy"
-            width="30"
-            height="20"
-          >
-        </button>
-      </div>
-
-      <!-- Logo & Title -->
-      <div itemscope itemtype="https://schema.org/Organization">
-        <img 
-          src="img/logo.png" 
-          alt="Web3 Bank Logo" 
-          class="logo" 
-          itemprop="logo"
-          width="150" 
-          height="150"
-          loading="eager"
-        >
-        <h1 id="header-title" itemprop="name" data-translate="header-title">Web3 Bank</h1>
-      </div>
-      
-      <p id="header-subtitle" class="tagline" itemprop="description" data-translate="header-subtitle">
-        Your Gateway to the Funniest Decentralized Future!
-      </p>
-    </nav>
+    </div>
+    <img src="img/logo.png" alt="Web3 Bank Logo" class="logo">
+    <h1 id="header-title">Web3 Bank</h1>
+    <p id="header-subtitle">Your Gateway to the Funniest Decentralized Future!</p>
   </header>
 
-  <main id="main-content" role="main">
-    <!-- Welcome Section -->
-    <section 
-      class="section" 
-      id="welcome-section" 
-      aria-labelledby="welcome-title"
-      itemscope 
-      itemtype="https://schema.org/WebPage"
-    >
-      <h2 id="welcome-title" class="section-title" data-translate="welcome-title">Welcome to Web3 Bank</h2>
-      <div class="card" role="region" aria-labelledby="welcome-title">
-        <p id="welcome-text" class="lead-text" data-translate="welcome-text">
-          🔥 Welcome to Web3 Bank — Where Memes Meet Money!...
-        </p>
-      </div>
-    </section>
-
-    <!-- Why Us Section -->
-    <section 
-      class="section" 
-      id="why-section" 
-      aria-labelledby="why-title"
-      itemscope 
-      itemtype="https://schema.org/ItemList"
-    >
-      <h2 id="why-title" class="section-title" data-translate="why-title">Why Web3 Bank?</h2>
-      <div class="card">
-        <ul id="why-list" class="benefits-list" aria-label="Benefits list">
-          <!-- Dynamic content from translations -->
-        </ul>
-        <a href="#listings-section" class="cta-button" data-translate="start-earning">Start Earning Now</a>
-      </div>
-    </section>
-
-    <!-- Tokenomics Section -->
-    <section 
-      class="section" 
-      id="tokenomics-section" 
-      aria-labelledby="tokenomics-title"
-      itemscope 
-      itemtype="https://schema.org/FinancialProduct"
-    >
-      <h2 id="tokenomics-title" class="section-title" data-translate="tokenomics-title">Tokenomics</h2>
-      <div class="card tokenomics-card">
-        <dl class="tokenomics-list">
-          <dt>Token Name:</dt>
-          <dd itemprop="name">WTB</dd>
-          
-          <dt>Total Supply:</dt>
-          <dd itemprop="amount">1,000,000,000 WTB</dd>
-          
-          <dt>Contract Address:</dt>
-          <dd>
-            <a 
-              href="https://solscan.io/token/EKpmvgCUUyg9WYCS8xK92wRGNEw6uy5EurWrxkd6pump" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="contract-link"
-            >
-              View Contract
-            </a>
-          </dd>
-        </dl>
-        <p id="tokenomics-text" data-translate="tokenomics-text">
-          Our tokenomics are designed to ensure fairness...
-        </p>
-      </div>
-    </section>
-
-    <!-- Roadmap Section -->
-    <section 
-      class="section" 
-      id="roadmap-section" 
-      aria-labelledby="roadmap-title"
-      itemscope 
-      itemtype="https://schema.org/ItemList"
-    >
-      <h2 id="roadmap-title" class="section-title" data-translate="roadmap-title">Development Roadmap</h2>
-      <div class="roadmap card">
-        <ol class="roadmap-list" aria-label="Development timeline">
-          <!-- Dynamic content from translations -->
-        </ol>
-      </div>
-    </section>
-
-    <!-- Listings Section -->
-    <section 
-      class="section" 
-      id="listings-section" 
-      aria-labelledby="listings-title"
-      itemscope 
-      itemtype="https://schema.org/ItemList"
-    >
-      <h2 id="listings-title" class="section-title" data-translate="listings-title">Token Listings</h2>
-      <div class="exchanges-grid">
-        <!-- Dynamic exchange cards -->
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
-    <div class="footer-content">
-      <div class="legal-links">
-        <a 
-          href="/terms" 
-          id="footer-terms" 
-          class="footer-link"
-          data-translate="footer-terms"
-        >
-          Terms of Service
-        </a>
-        <span aria-hidden="true">|</span>
-        <a 
-          href="/privacy" 
-          id="footer-privacy" 
-          class="footer-link"
-          data-translate="footer-privacy"
-        >
-          Privacy Policy
-        </a>
-      </div>
-      
-      <div class="social-links" aria-label="Social media links">
-        <a 
-          href="https://x.com/web3_bank" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="social-link"
-          aria-label="Twitter"
-        >
-          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-            <!-- Twitter/X icon SVG code -->
-          </svg>
-        </a>
-        <!-- Other social links -->
-      </div>
-    </div>
-    
-    <div class="analytics-section" role="region" aria-live="polite">
-      <p id="visit-counter" class="stat-label">
-        <span data-translate="visit-counter">Visits:</span> <span class="count">0</span>
-      </p>
-    </div>
-  </footer>
-
-  <!-- Auth Modal -->
-  <div id="auth-modal" class="modal hidden" role="dialog" aria-modal="true">
+  <!-- Модальное окно -->
+  <div id="auth-modal" class="modal hidden">
     <div class="modal-content">
-      <button 
-        onclick="hideModal()" 
-        class="close-button" 
-        aria-label="Close modal"
-      >
-        &times;
-      </button>
-      <h3 id="auth-title" data-translate="auth-title">Sign In</h3>
-      <button 
-        onclick="connectFantom()" 
-        class="auth-wallet-button"
-        aria-label="Connect wallet"
-      >
-        <img 
-          src="img/fantom-logo.png" 
-          alt="Fantom Wallet" 
-          class="wallet-icon"
-          loading="lazy"
-          width="40"
-          height="40"
-        >
-        <span id="connect-text" data-translate="connect-fantom">
-          Connect with Fantom Wallet
-        </span>
+      <span onclick="hideModal()" class="close-button">&times;</span>
+      <h3 id="auth-title">Sign In</h3>
+      <button onclick="connectFantom()" class="auth-wallet-button">
+        <img src="img/fantom-logo.png" alt="Fantom Wallet" class="wallet-icon">
+        <span id="connect-text">Connect with Fantom Wallet</span>
       </button>
     </div>
   </div>
   <div id="modal-overlay" class="modal-overlay hidden"></div>
 
-  <!-- Scripts -->
-  <script src="scripts.js" defer></script>
+  <!-- Навигационное меню -->
+  <nav class="navbar" id="navbar">
+    <ul class="nav-links">
+      <li><a href="#welcome-section" id="nav-home">Home</a></li>
+      <li><a href="#why-section" id="nav-why">Why Us</a></li>
+      <li><a href="#tokenomics-section" id="nav-tokenomics">Tokenomics</a></li>
+      <li><a href="#use-cases-section" id="nav-use-cases">Use Cases</a></li>
+      <li><a href="#roadmap-section" id="nav-roadmap">Roadmap</a></li>
+      <li><a href="#listings-section" id="nav-listings">Listings</a></li>
+      <li><a href="#partners-section" id="nav-partners">Partners</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- Секция Welcome -->
+    <div class="section" id="welcome-section">
+      <h2 id="welcome-title">Welcome to Web3 Bank</h2>
+      <div class="card">
+        <p id="welcome-text">
+          🔥 Welcome to Web3 Bank — Where Memes Meet Money! Say goodbye to boring finance! Join a decentralized community where every meme you create or share can earn you WTB tokens. Powered by blockchain, we turn laughter into real value. Start your journey today — earn, vote, and build the future of meme-driven finance with us!
+        </p>
+      </div>
+    </div>
+
+    <!-- Секция Why Us -->
+    <div class="section" id="why-section">
+      <h2 id="why-title">Why Web3 Bank?</h2>
+      <div class="card">
+        <ul id="why-list">
+          <li>Earn While You Meme: Get rewarded with WTB tokens for every viral meme you share.</li>
+          <li>Shape the Future: Vote on platform upgrades and meme contests with your tokens.</li>
+          <li>Exclusive NFT Drops: Unlock limited-edition memes that can’t be found anywhere else.</li>
+          <li>Community-Driven: Join 10,000+ memers building a decentralized economy together.</li>
+          <li>Secure & Transparent: Built on blockchain — no hidden fees, no middlemen.</li>
+        </ul>
+        <a href="#listings-section" class="cta-button">Start Earning Now</a>
+      </div>
+    </div>
+
+    <!-- Секция Tokenomics -->
+    <div class="section" id="tokenomics-section">
+      <h2 id="tokenomics-title">Tokenomics</h2>
+      <div class="card">
+        <p><strong>Token Name:</strong> WTB</p>
+        <p><strong>Total Supply:</strong> 1,000,000,000 WTB</p>
+        <p><strong>Contract Address:</strong> 
+          <a href="https://solscan.io/token/EKpmvgCUUyg9WYCS8xK92wRGNEw6uy5EurWrxkd6pump" target="_blank" style="color: #4ade80;">View Contract</a>
+        </p>
+        <p id="tokenomics-text">Our tokenomics are designed to ensure fairness, sustainability, and long-term growth for our community. Join us and become part of the decentralized future!</p>
+      </div>
+    </div>
+
+    <!-- Секция Use Cases -->
+    <div class="section" id="use-cases-section">
+      <h2 id="use-cases-title">Token Use Cases</h2>
+      <div class="use-cases-grid">
+        <div class="use-case-card">
+          <h3>Meme Marketplace</h3>
+          <p>Buy, sell, and trade meme NFTs using WTB tokens. Earn royalties from viral memes!</p>
+        </div>
+        <div class="use-case-card">
+          <h3>Decentralized Governance</h3>
+          <p>Vote for platform upgrades and meme contests with your WTB tokens.</p>
+        </div>
+        <div class="use-case-card">
+          <h3>Meme Staking</h3>
+          <p>Stake WTB to boost meme visibility and earn rewards.</p>
+        </div>
+        <div class="use-case-card">
+          <h3>Web3 Mem Games</h3>
+          <p>Play meme-based blockchain games and win WTB prizes.</p>
+        </div>
+        <div class="use-case-card">
+          <h3>Meme Crowdfunding</h3>
+          <p>Fund your meme projects using WTB tokens and community support.</p>
+        </div>
+        <div class="use-case-card">
+          <h3>Educational Memes</h3>
+          <p>Learn blockchain basics through interactive meme courses (paid in WTB).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Секция Listings -->
+    <div class="section" id="listings-section">
+      <h2 id="listings-title">Token Listings</h2>
+      <div class="exchanges-grid">
+        <a href="https://pump.fun/coin/EKpmvgCUUyg9WYCS8xK92wRGNEw6uy5EurWrxkd6pump" target="_blank" class="exchange-card">
+          <img src="img/pump.fun.png" alt="Pump.Fun" class="exchange-logo">
+          <p class="exchange-text">Trade WTB on Pump.Fun</p>
+        </a>
+        <a href="https://dexscreener.com/solana/a9yfm6c6cvvsbj9wjijl5zhil1kokyzbwee4aazadsmh" target="_blank" class="exchange-card">
+          <img src="img/dexscreener.png" alt="DexScreener" class="exchange-logo">
+          <p class="exchange-text">Track WTB metrics on DexScreener</p>
+        </a>
+        <a href="https://www.dextools.io/app/ru/solana/pair-explorer/EKpmvgCUUyg9WYCS8xK92wRGNEw6uy5EurWrxkd6pump?t=1742136328745" target="_blank" class="exchange-card">
+          <img src="img/dextools.png" alt="DexTools" class="exchange-logo">
+          <p class="exchange-text">Check WTB price on DexTools</p>
+        </a>
+        <a href="#" target="_blank" class="exchange-card">
+          <img src="img/soon.png" alt="Coming Soon" class="exchange-logo">
+          <p class="exchange-text">Raydium listing (coming soon)</p>
+        </a>
+        <a href="#" target="_blank" class="exchange-card">
+          <img src="img/soon.png" alt="Coming Soon" class="exchange-logo">
+          <p class="exchange-text">CoinGecko listing (coming soon)</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Секция Partners -->
+    <div class="section" id="partners-section">
+      <h2 id="partners-title">Our Partners</h2>
+      <div class="partners-grid">
+        <a href="https://zealy.io/cw/web3bank/questboard" target="_blank" class="partner-card">
+          <img src="img/zealy.jpg" alt="Zealy.io" class="partner-logo">
+          <p>Zealy.io</p>
+        </a>
+        <a href="#" target="_blank" class="partner-card">
+          <img src="img/soon.png" alt="Coming Soon" class="partner-logo">
+          <p>Coming Soon</p>
+        </a>
+        <a href="#" target="_blank" class="partner-card">
+          <img src="img/soon.png" alt="Coming Soon" class="partner-logo">
+          <p>Coming Soon</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Секция Roadmap -->
+    <div class="section" id="roadmap-section">
+      <h2 id="roadmap-title">Roadmap</h2>
+      <div class="roadmap card">
+        <div class="roadmap-item">
+          <span>Q1 2025</span>
+          <p>Launch WTB token on MMM platform</p>
+        </div>
+        <div class="roadmap-item">
+          <span>Q2 2025</span>
+          <p>Listing on decentralized exchanges (DEX)</p>
+        </div>
+        <div class="roadmap-item">
+          <span>Q3 2025</span>
+          <p>Listing on CoinGecko, CoinMarketCap</p>
+        </div>
+        <div class="roadmap-item">
+          <span>Q4 2025</span>
+          <p>Global marketing campaign</p>
+        </div>
+        <div class="roadmap-item">
+          <span>Q1 2026</span>
+          <p>Migration to multiple blockchains</p>
+        </div>
+        <div class="roadmap-item">
+          <span>Q2 2026</span>
+          <p>Development of Web3 Bank ecosystem projects</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Секция How It Works -->
+    <div class="section" id="how-section">
+      <h2 id="how-title">How It Works</h2>
+      <div class="card">
+        <p id="how-text">
+          1. Create your Web3 wallet.<br>
+          2. Mint or trade WTB meme tokens.<br>
+          3. Vote on the best memes to govern the platform.<br>
+          4. Laugh your way to the top of the leaderboard!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Web3 Bank. All rights reserved. | 
+      <a href="#" id="footer-terms">Terms of Service</a> | 
+      <a href="#" id="footer-privacy">Privacy Policy</a>
+    </p>
+    <div class="social-icons">
+      <a href="https://x.com/web3_bank" target="_blank">𝕏</a>
+      <a href="https://t.me/web3bank_meme" target="_blank">Telegram</a>
+    </div>
+    <div class="analytics-section">
+      <p id="visit-counter">Visits: 0</p>
+      <a href="https://analytics.google.com/analytics/web/" target="_blank" id="analytics-link">View Analytics</a>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
