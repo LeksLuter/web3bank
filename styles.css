@@ -192,8 +192,8 @@ header {
 /* Кнопка входа */
 .auth-button-container {
   position: fixed;
-  top: 20px;
-  right: 70px; /* Исправлено положение (было 90px) */
+  /*top: 20px;*/
+  right: 60px; /* Исправлено положение (было 90px) */
   z-index: 1001;
 }
 
