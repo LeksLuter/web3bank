@@ -147,6 +147,7 @@ function hideModal() {
   document.getElementById("auth-modal").classList.add("hidden");
   document.getElementById("modal-overlay").classList.add("hidden");
 }
+document.getElementById("modal-overlay").addEventListener("click", hideModal);
 
 // Подключение Fantom Wallet (пример)
 async function connectFantom() {
