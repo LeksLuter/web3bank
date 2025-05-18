@@ -420,9 +420,15 @@ footer p {
     font-size: 2rem;
   }
 
-  .card {
-    padding: 15px;
-  }
+.card {
+  background: rgba(0, 0, 0, 0.8); /* Было 0.7 */
+  border-radius: 12px;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
 
   .use-cases-grid,
   .exchanges-grid {
