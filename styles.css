@@ -6,7 +6,7 @@ body {
   background-size: cover;
   color: #ffffff;
   line-height: 1.6;
-  padding-top: 80px; /* Отступ под фиксированное меню */
+  padding-top: 80px;
 }
 
 header {
@@ -50,6 +50,21 @@ header {
   margin: 10px auto 0;
 }
 
+.card {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
 /* Навигационное меню */
 .navbar {
   position: fixed;
@@ -81,13 +96,8 @@ header {
 .nav-links a {
   color: #4ade80;
   text-decoration: none;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #ff7f50;
+  font-size: 1rem;
+  padding: 10px 15px;
 }
 
 /* Адаптивность для ПК */
@@ -141,16 +151,6 @@ header {
   transition: transform 0.3s ease;
 }
 
-.navbar.active + .mobile-menu-toggle .menu-icon::before {
-  transform: rotate(45deg) translateY(8px);
-  background: #ff7f50;
-}
-
-.navbar.active + .mobile-menu-toggle .menu-icon::after {
-  transform: rotate(-45deg) translateY(-8px);
-  background: #ff7f50;
-}
-
 /* Контейнер для кнопок входа и флага */
 .header-controls {
   position: fixed;
@@ -169,14 +169,19 @@ header {
   position: static;
   cursor: pointer;
 }
+
+/* Флаг */
 .flag-icon {
   width: 25px;
   height: 25px;
-  object-fit: cover;
   border-radius: 50%;
   border: 2px solid #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+}
+
+.flag-icon:hover {
+  transform: scale(1.1);
 }
 
 /* Модальное окно */
@@ -236,7 +241,7 @@ header {
 }
 
 .use-case-card {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 12px;
   padding: 20px;
   text-align: center;
@@ -265,7 +270,7 @@ header {
 }
 
 .exchange-card {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 12px;
   padding: 20px;
   text-align: center;
@@ -301,7 +306,7 @@ header {
 }
 
 .partner-card {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 12px;
   padding: 20px;
   text-align: center;
@@ -329,7 +334,7 @@ header {
 }
 
 .roadmap-item {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 12px;
   padding: 20px;
   text-align: center;
@@ -382,11 +387,7 @@ footer p {
   display: none !important;
 }
 
-/* Кнопка входа и флаг */
-.auth-button-container {
-  position: static;
-}
-
+/* Кнопка входа */
 .auth-button {
   background: linear-gradient(135deg, #ff7f50, #ff6347);
   border: none;
@@ -402,7 +403,7 @@ footer p {
   transform: scale(1.05);
 }
 
-/* Для мобильных устройств */
+/* Адаптивность */
 @media (max-width: 768px) {
   .header-controls {
     gap: 10px;
@@ -420,15 +421,9 @@ footer p {
     font-size: 2rem;
   }
 
-.card {
-  background: rgba(0, 0, 0, 0.8); /* Было 0.7 */
-  border-radius: 12px;
-  padding: 30px;
-  margin: 0 auto;
-  max-width: 800px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
+  .card {
+    padding: 15px;
+  }
 
   .use-cases-grid,
   .exchanges-grid {
