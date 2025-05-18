@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: url('https://i.imgur.com/12sZ8xe.jpg') no-repeat center center fixed;
+  background: url('https://i.imgur.com/12sZ8xe.jpg ') no-repeat center center fixed;
   background-size: cover;
   color: #ffffff;
   line-height: 1.6;
@@ -39,7 +39,6 @@ header {
   margin-bottom: 20px;
   color: #ff7f50;
   position: relative;
-  display: inline-block;
 }
 
 .section h2::after {
@@ -51,20 +50,6 @@ header {
   margin: 10px auto 0;
 }
 
-.card {
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
-  padding: 30px;
-  margin: 0 auto;
-  max-width: 800px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
 /* Навигационное меню */
 .navbar {
   position: fixed;
@@ -72,7 +57,7 @@ header {
   left: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
-  padding: 10px 0;
+  padding: 10px;
   box-sizing: border-box;
   transform: translateY(-100%);
   transition: transform 0.3s ease;
@@ -105,15 +90,38 @@ header {
   color: #ff7f50;
 }
 
+/* Адаптивность для ПК */
+@media (min-width: 769px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    transform: none !important;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    z-index: 1000;
+  }
+
+  .nav-links {
+    flex-direction: row;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+  }
+}
+
 /* Гамбургер меню */
 .mobile-menu-toggle {
-  display: none;
   position: fixed;
   top: 20px;
   left: 20px;
   z-index: 1001;
   cursor: pointer;
-  padding: 5px;
 }
 
 .menu-icon {
@@ -130,7 +138,7 @@ header {
   width: 100%;
   height: 3px;
   background: #ffffff;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .navbar.active + .mobile-menu-toggle .menu-icon::before {
@@ -143,83 +151,27 @@ header {
   background: #ff7f50;
 }
 
-.navbar.active + .mobile-menu-toggle .menu-icon {
-  background: transparent;
-}
-
-@media (min-width: 769px) {
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    transform: none !important;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    z-index: 1000;
-  }
-  
-  .mobile-menu-toggle {
-    display: none;
-  }
-}
-
-/* Группируем кнопки в header */
+/* Контейнер для кнопок входа и флага */
 .header-controls {
   position: fixed;
   top: 20px;
-  right: 20px; /* Общий отступ справа */
-  z-index: 1001;
+  right: 20px;
+  z-index: 1002;
   display: flex;
-  gap: 15px; /* Расстояние между кнопками */
+  gap: 15px;
 }
-/* Кнопка флага */
+
+.auth-button-container {
+  position: static;
+}
+
 .language-switcher {
   position: static;
   cursor: pointer;
 }
 
-.flag-icon {
-  width: 30px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.flag-icon:hover {
-  transform: scale(1.1);
-}
-
-/* Кнопка входа */
-.auth-button-container {
-/*position: static;*/
-  z-index: 1002;
-}
-
-.auth-button {
-  background: linear-gradient(135deg, #ff7f50, #ff6347);
-  border: none;
-  color: #ffffff;
-  padding: 12px 25px;
-  border-radius: 50px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.auth-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
 /* Модальное окно */
 .modal {
-  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -231,8 +183,17 @@ header {
   display: none;
 }
 
+.modal-content {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border: 2px solid #ff7f50;
+}
+
 .modal-overlay {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -246,16 +207,6 @@ header {
   display: none;
 }
 
-.modal-content {
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 12px;
-  padding: 30px;
-  width: 80%;
-  max-width: 400px;
-  text-align: center;
-  border: 2px solid #ff7f50;
-}
-
 .close-button {
   position: absolute;
   top: 10px;
@@ -265,24 +216,33 @@ header {
   color: #ff7f50;
 }
 
-.auth-wallet-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #3c3c3c;
-  color: #ff7f50;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+/* Секция Use Cases */
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.auth-wallet-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.use-case-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.use-case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.use-case-card h3 {
+  color: #ff7f50;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 /* Секция Listings */
@@ -301,7 +261,6 @@ header {
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease;
-  text-decoration: none;
 }
 
 .exchange-card:hover {
@@ -358,9 +317,6 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .roadmap-item {
@@ -368,6 +324,7 @@ header {
   border-radius: 12px;
   padding: 20px;
   text-align: center;
+  position: relative;
 }
 
 .roadmap-item::before {
@@ -387,41 +344,6 @@ header {
   font-weight: 600;
   color: #4ade80;
   margin-right: 15px;
-}
-
-/* Секция Use Cases */
-.use-cases-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.use-case-card {
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.use-case-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.use-case-card h3 {
-  color: #ff7f50;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.use-case-card p {
-  color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.4;
 }
 
 /* Футер */
@@ -446,166 +368,55 @@ footer p {
   margin-top: 20px;
 }
 
-/* Стили для скрытых элементов */
+/* Класс для скрытых элементов */
 .hidden {
   display: none !important;
 }
 
-/* Для мобильных: показываем гамбургер */
-.mobile-menu-toggle {
-  display: block !important; /* Важно: переопределяем display */
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1001;
+/* Кнопка входа и флаг */
+.auth-button-container {
+  position: static;
+}
+
+.auth-button {
+  background: linear-gradient(135deg, #ff7f50, #ff6347);
+  border: none;
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.menu-icon {
-  width: 30px;
-  height: 3px;
-  background: #ffffff;
-  position: relative;
+.auth-button:hover {
+  transform: scale(1.05);
 }
 
-.menu-icon::before,
-.menu-icon::after {
-  content: '';
-  width: 30px;
-  height: 3px;
-  background: #ffffff;
-  position: absolute;
-  left: 0;
-  transition: all 0.3s ease;
-}
-
-.menu-icon::before {
-  top: -8px;
-}
-
-.menu-icon::after {
-  top: 8px;
-}
-
-/* При активном меню */
-.navbar.active + .mobile-menu-toggle .menu-icon {
-  background: transparent;
-}
-
-.navbar.active + .mobile-menu-toggle .menu-icon::before {
-  transform: rotate(45deg) translateY(8px);
-  background: #ff7f50;
-}
-
-.navbar.active + .mobile-menu-toggle .menu-icon::after {
-  transform: rotate(-45deg) translateY(-8px);
-  background: #ff7f50;
-}
-
-@media (min-width: 769px) {
-  .mobile-menu-toggle {
-    display: none !important; /* Скрываем на ПК */
-  }
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  header {
-    padding: 20px;
-  }
-  
-  .exchange-logo {
-    height: 120px;
-  }
-  
-  .partner-logo {
-    height: 80px;
-  }
-  
-  .section h2 {
-    font-size: 2rem;
-  }
-  
-  .card {
-    padding: 15px;
-  }
-  
-  .use-cases-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .exchanges-grid {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 768px) {
-  .auth-button-container {
-    right: 20px;
-  }
-    .language-switcher {
-    right: 60px;
-  }
-}
-@media (max-width: 480px) {
-  .section h2 {
-    font-size: 1.5rem;
-  }
-
-  .section p {
-    font-size: 0.9rem;
-  }
-}
-@media (max-width: 768px) {
-  footer {
-    font-size: 0.8rem;
-  }
-
-  .social-icons a {
-    font-size: 1.2rem;
-  }
-}
-/* Для ПК: горизонтальное меню */
-@media (min-width: 769px) {
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    z-index: 999;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row; /* Горизонтальное расположение */
-    gap: 30px; /* Расстояние между пунктами */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-links a {
-    color: #4ade80;
-    font-size: 1rem;
-    padding: 10px 15px;
-    text-decoration: none;
-  }
-
-  .nav-links a:hover {
-    color: #ff7f50;
-  }
-
-  /* Скрываем гамбургер на ПК */
-  .mobile-menu-toggle {
-    display: none;
-  }
-}
 /* Для мобильных устройств */
 @media (max-width: 768px) {
   .header-controls {
-    gap: 10px; /* Меньше расстояние на мобильных */
+    gap: 10px;
+  }
+
+  .exchange-logo {
+    height: 120px;
+  }
+
+  .partner-logo {
+    height: 80px;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .use-cases-grid,
+  .exchanges-grid {
+    grid-template-columns: 1fr;
   }
 }
