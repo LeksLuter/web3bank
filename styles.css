@@ -430,3 +430,149 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==================== QUEST ROOM STYLES ==================== */
+
+.quest-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 127, 80, 0.3);
+}
+
+.quest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 127, 80, 0.4);
+}
+
+.quest-info h3 {
+  margin: 0 0 10px 0;
+  color: #ff7f50;
+  font-size: 1.2rem;
+}
+
+.quest-points {
+  margin: 0;
+  color: #4ade80;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.quest-button {
+  background: linear-gradient(135deg, #ff7f50, #ff6347);
+  border: none;
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  min-width: 120px;
+}
+
+.quest-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(255, 127, 80, 0.5);
+}
+
+.quest-button.completed {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  cursor: default;
+}
+
+.quest-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.auth-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 127, 80, 0.3);
+}
+
+.user-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.user-card h2 {
+  color: #4ade80;
+  margin-top: 0;
+}
+
+.user-card p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+#login-modal {
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 127, 80, 0.5);
+}
+
+#login-modal h3 {
+  color: #ff7f50;
+  margin-top: 0;
+}
+
+#login-modal input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  margin: 15px 0;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 127, 80, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#login-modal input:focus {
+  border-color: #ff7f50;
+}
+
+#login-modal input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.quests-container {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid rgba(255, 127, 80, 0.3);
+}
+
+.quests-container h2 {
+  color: #ff7f50;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .quest-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .quest-button {
+    width: 100%;
+  }
+}

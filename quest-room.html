@@ -12,8 +12,8 @@
   <!-- Меню сайта -->
   <nav class="navbar" id="navbar">
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#why-section">Why Us</a></li>
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="index.html#why-section" id="nav-why">Why Us</a></li>
       <li><a href="quest-room.html">Quest Room</a></li>
     </ul>
   </nav>
@@ -28,24 +28,24 @@
   <div class="container">
     <!-- Блок авторизации -->
     <div class="auth-card">
-      <button onclick="showLoginForm()" class="cta-button">Authorize with Wallet</button>
+      <button onclick="showLoginForm()" class="cta-button" id="quest-authorize-btn">Authorize with Wallet</button>
       <div id="login-modal" class="modal hidden">
-        <h3>Login</h3>
+        <h3 id="quest-login-title">Login</h3>
         <input type="text" id="wallet-address" placeholder="Your Wallet Address">
-        <button onclick="login()" class="cta-button">Sign In</button>
+        <button onclick="login()" class="cta-button" id="quest-signin-btn">Sign In</button>
       </div>
     </div>
 
     <!-- Информация о пользователе -->
     <div class="user-card hidden">
-      <h2>User Profile</h2>
-      <p>Connected Wallet: <span id="user-wallet"></span></p>
-      <p>Completed Tasks: <span id="tasks-completed">0</span></p>
+      <h2 id="quest-profile-title">User Profile</h2>
+      <p><span id="quest-connected-wallet">Connected Wallet</span>: <span id="user-wallet"></span></p>
+      <p><span id="quest-completed-tasks">Completed Tasks</span>: <span id="tasks-completed">0</span></p>
     </div>
 
     <!-- Список заданий -->
     <div class="quests-container">
-      <h2>Available Quests</h2>
+      <h2 id="quest-available-title">Available Quests</h2>
       <div id="quests-list">
         <!-- Задания будут добавляться через скрипт -->
       </div>
@@ -53,14 +53,5 @@
   </div>
 
   <script src="scripts.js"></script>
-  <script>
-    // Инициализация квестов
-    const quests = [
-      { title: "Follow Web3 Bank on X", points: 10 },
-      { title: "Mint first meme NFT", points: 50 }
-    ];
-
-    // Функции для квест-рума (полный код в scripts.js)
-  </script>
 </body>
 </html>
