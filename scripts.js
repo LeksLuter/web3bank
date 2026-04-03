@@ -61,6 +61,7 @@ const translations = {
     "nav-partners": "Partners",
     "auth-title": "Sign In",
     "connect-fantom": "Connect with Fantom Wallet",
+    "connect-fantom-install": "Install Phantom",
     "quest-header": "Quest Room",
     "quest-authorize": "Authorize with Wallet",
     "quest-login-title": "Login",
@@ -138,6 +139,7 @@ const translations = {
     "nav-partners": "Партнеры",
     "auth-title": "Войти",
     "connect-fantom": "Подключить Fantom Wallet",
+    "connect-fantom-install": "Установить Фантом",
     "quest-header": "Комната квестов",
     "quest-authorize": "Авторизоваться с кошельком",
     "quest-login-title": "Вход",
@@ -241,7 +243,32 @@ async function connectFantom() {
     alert(`Connected: ${accounts[0]}`);
     hideModal();
   } else {
-    alert("Fantom Wallet не обнаружен!");
+    // Если кошелек не установлен, меняем кнопку и добавляем ссылку на установку
+    const connectBtn = document.getElementById("connect-fantom-btn");
+    
+    // Меняем текст кнопки
+    connectBtn.textContent = translations[currentLanguage]["connect-fantom-install"] || "Install Phantom";
+    
+    // Добавляем обработчик для перехода на страницу установки
+    connectBtn.onclick = function() {
+      window.open("https://fantom.foundation/wallets/", "_blank");
+    };
+    
+    // Добавляем сообщение пользователю
+    const message = document.createElement("p");
+    message.id = "wallet-not-found-msg";
+    message.style.color = "#ff6b6b";
+    message.style.marginTop = "10px";
+    message.style.fontSize = "14px";
+    message.textContent = currentLanguage === "ru" 
+      ? "Фантом Wallet не обнаружен. Пожалуйста, установите расширение." 
+      : "Fantom Wallet not found. Please install the extension.";
+    
+    // Удаляем предыдущее сообщение если есть
+    const existingMsg = document.getElementById("wallet-not-found-msg");
+    if (existingMsg) existingMsg.remove();
+    
+    connectBtn.parentNode.insertBefore(message, connectBtn.nextSibling);
   }
 }
 
